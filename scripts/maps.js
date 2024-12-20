@@ -2,6 +2,7 @@ function createMap(mapId, geoJsonUrl, popupFormatter, legendHtml, grey=false) {
     // Initialize the map in the specified container
     var map = L.map(mapId).setView([20, 0], 2);
     map.scrollWheelZoom.disable();
+    map.doubleClickZoom.disable();
 
     // Add OpenStreetMap tiles
     if(grey){
