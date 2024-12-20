@@ -101,16 +101,10 @@
               
                         
             <h2>Let's get our hands dirty!</h1>
-            <p>The first step was to build a suitable dataset for this ambitious project.
-                It's important to note that the original dataset was quite "America-centric,"
-                which was a bit problematic for our study. To address this, we extended it with other datasets
-                (source link) to achieve a more balanced representation, with more movies coming from other countries
-                like Russia or Soviet Union. </p>
+            <p>The first step was to build a suitable dataset for this ambitious project. It's important to note that the original dataset was quite "America-centric," which was a bit problematic for our study. To address this, we extended it with other datasets (source link) to achieve a more balanced representation, with more movies coming from other countries like Russia or Soviet Union. </p>
             
-            <h2>A first glance at the data</h2>
-            <p>After data augmentation and pre-processing, we ended up with a dataset containing 25621 films
-                released between 1945 and 1995, of which 2919 are classified as Eastern side and 3142 as Western side.
-                The map below – which you can explore – shows the number of movies released by countries.</p>
+            <h1 id="section2">A first glance at the data</h1>
+            <p>After data augmentation and pre-processing, we ended up with a dataset containing 25621 films released between 1945 and 1995, of which 2919 are classified as Eastern side and 3142 as Western side. The map below – which you can explore – shows the number of movies released by countries.</p>
             
             <p class="text-center mb-1">Number of Films per country</p>
             <div id="map2" class="map-container"></div>
@@ -237,7 +231,7 @@
             </div>
             <!-- End of comment -->
 
-            <h2>The reflection of international dynamics and influences in film production</h2>
+            <h1 id="section3">The reflection of international dynamics and influences in film production</h1>
             <p>
                 Clearly, the USA and the USSR are superpowers, demonstrating their superiority on all levels, including film production, as we've just seen. Yet beyond their status, these two nations seek to “dominate” the world and rally as many countries as possible to their ideology. To achieve this goal, they cannot act alone. They must form alliances to contain the expansion of their adversaries and warn off potential aggression.
             </p>
@@ -398,7 +392,7 @@
             <!-- End of comment -->
 
 
-            <h1>Thematic and Narrative Strategies in Movies to Promote Specific Ideologies</h1>
+            <h1 id="section4">Thematic and Narrative Strategies in Movies to Promote Specific Ideologies</h1>
 
             <p>
                 Now that we know that countries produce films oriented towards either side, and that they collaborate within these blocs to disseminate their ideas more widely, the question arises of what it means for a film to be classified as Eastern or Western. What are the characteristics of each classification, and more importantly, how do films convey the ideologies and values they aim to promote through the themes they address — namely, capitalism in the West and communism in the East?
@@ -565,8 +559,72 @@
                 Western productions, on the other hand, balanced their themes in a different way, maintaining more consistent levels of each genre. The differences appear more rooted in cultural perspectives and narrative traditions than in the shifting geopolitical climate. While time periods did influence certain trends—like the détente-related surge in romance and social stories—underlying cultural approaches to morality, heroism, and personal life shaped the steady contrast in what each side’s filmmakers chose to highlight. In other words, the data doesn’t just show us when themes changed; it helps us understand how deeply woven these storytelling choices were into the fabric of each bloc’s cultural identity.
             </p>
 
+            <h1 id="section5">What about movie characters?</h1>
 
+            <p>
+                After exploring the themes and scenarios of films and discovering that, beyond reflecting the social and political climate of their time, they also serve as a subtle and valuable instrument of influence, it is pertinent to question the role of characters to delve deeper into the analysis of cinema during the Cold War.
+            </p>
 
+            <p>
+                At the heart of every film, characters emerge as the true drivers of the story. We follow their journeys, share their emotions, and at times, feel affection, admiration, or even hatred toward them. Their ability to captivate and influence audiences is undeniable.
+            </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex p-0 p-sm-1">
+                        <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="persona-text p-3 p-sm-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Wait a minute, are you suggesting that the characters might have influenced me when I watched a film? That they weren't just story elements, but carriers of deeper messages? Am I the only one shocked by this revelation? Thanks to the Datamigos for opening my eyes. I know… I’m not holding much hope that these assumptions are wrong…
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
+            <p>
+                We focused on three key dimensions to better understand their role during the Cold War:
+                <ul>
+                    <li>Were they used to convey ideologies and shape public opinion?</li>
+                    <li>Do they mirror the political conflicts and tensions of the era?</li>
+                    <li>Do they represent the opinions and sentiments shared by populations of their time?</li>
+                </ul>
+            </p>
+
+            <p>
+                Our dataset contains no fewer than 7052 characters or groups of characters classified as representing one of the two blocs. Among these, 3,726 figures represent the Eastern bloc, while 3,326 represent the West. 
+            </p>
+
+            <h2>Characters as Vectors of Ideologies</h2>
+
+            <p>
+                If characters are used as vehicles for ideas and ideologies, there must be recurring archetypes in cinematic narratives. We wondered if it was possible, through Latent Dirichlet Allocation (LDA) analysis, to identify the major themes embodied by characters based on their affiliation with the Eastern or Western Bloc. After several trials of topic detection, it became clear that three archetypes per bloc were sufficient to analyze the different representations of values associated with each side in the films.
+            </p>
+
+            <!-- Plot: Switch between e/w characters-->
+            <iframe src="" width="100%" height="500px"></iframe>
+
+            <p>
+                The extraction of these themes reveals two interesting points:
+                <ul>
+                    <li>Characters clearly embody values that are distinct and characteristic of their bloc. Indeed, the values of community and sacrifice are much more prominent in Eastern characters, while in the West, individualism and the desire for freedom dominate.</li>
+                    <li>The absence of the "villain" archetype among the characters representing the West in the extracted themes. In contrast, this archetype is clearly present in the themes associated with the characters of the East. This suggests that no film, regardless of its alignment, portrays the "villain" as a representative of the West… Was the Soviet Union more lenient in its representation of the opposition? This is what we will explore very soon!</li>
+                </ul>
+            </p>
+
+            <h2>Character Archetypes</h2>
+
+            <p>
+                Before we proceed, here is an overview of the character archetypes that match the extracted topics. To define them, we relied on the distribution of words within the topics, also considering the overall term frequency to assess the relevance of each word. Indeed, a word that is very present in a topic but also widespread throughout the entire corpus (the descriptions of our characters) is less significant than a word that is very present in a topic and less frequent in the rest of the corpus.
+            </p>
+
+            <!-- Cards: Character archetypes-->
             <div class="container my-5 p-0">
                 <!-- First Level Pills -->
                 <ul class="nav nav-pills mb-1 justify-content-center first-level" id="firstLevelPills" role="tablist">
@@ -662,17 +720,130 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            
+            <!-- END of archetypes cards-->
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci orci, cursus id purus sit amet, varius feugiat urna. Sed vel rutrum lorem, sed accumsan lectus. Maecenas volutpat est nec ultrices malesuada. Integer facilisis luctus vulputate. Suspendisse pharetra at nulla ut varius. Nunc vehicula pulvinar sem nec sodales. Donec urna neque, vehicula pulvinar risus id, tincidunt aliquet magna. Donec non lacus neque. Quisque nisi velit, feugiat ac tellus ac, porta commodo quam. Sed a fermentum ligula.
-
-                Donec feugiat metus quis porta vulputate. Aenean vel neque auctor, vestibulum lacus non, gravida nulla. Curabitur congue euismod erat vel varius. Vestibulum in laoreet nisi. In mattis felis eu purus rhoncus, in faucibus enim tempus. Etiam quis turpis magna. Fusce maximus diam erat, sed rhoncus nisl vehicula vitae. Aenean quis rutrum tortor, consectetur pulvinar nunc. Donec venenatis tincidunt est. Fusce mauris sapien, pretium a aliquam sit amet, suscipit id enim. Aenean a felis vel risus interdum interdum. Morbi faucibus iaculis elementum. Proin ante quam, aliquet sit amet quam nec, viverra ultricies odio. Aenean euismod velit posuere varius commodo.
-                
-                Mauris ornare tellus dui, ac mollis lorem elementum ut. Aenean venenatis velit commodo, luctus mauris in, blandit libero. In rutrum ornare sapien, id lacinia est. Duis elit nisl, lobortis sed tristique ac, dictum a diam. Aliquam convallis enim justo, et dignissim lacus consectetur tempor. Suspendisse felis massa, dapibus tempor erat in, tempor auctor velit. In hendrerit diam a dapibus posuere. Aenean purus tortor, pretium nec ex eu, tempor posuere dolor.
+                To understand why the "American villain" archetype is absent, we analyzed the distribution of these archetypes based on the film's side.
             </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex p-0 p-sm-1">
+                        <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="persona-text p-3 p-sm-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Wondering why there are fewer characters than initially mentioned? Well, the dataset was filtered after clustering into archetypes. The Datamigos kept only the characters that fit clearly into one archetype, excluding those that were too close to multiple categories.
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
+            <p>
+                We can identify two distinct strategies employed by the two blocs. On one hand, the Western Bloc, while predominantly showcasing characters aligned with its own side (725 western characters), does not overlook portraying adversaries (569 eastern characters). In fact, it often depicts them negatively—269 authoritarian villains out of 569 characters, roughly one in two. Western representatives, however, are consistently portrayed as engaging archetypes, embodying Western values (as outlined in our archetypes cards). Even when complex figures like antiheroes are featured, they remain compelling and intriguing for the audience.
+            </p>
+
+            <p>
+                On the other hand, the Soviet Union takes a different approach, focusing on its own representatives (850 eastern characters), often portrayed as Tragic Heroes or Community Defenders who embody communist ideologies. While there are a few “negative” portrayals of Eastern characters, they are negligible (200 out of over 850). Moreover, Western characters are rarely featured in Soviet films (267 western characters), and when they do appear,  they are not particularly negatively portrayed. Instead, Soviet cinema prioritizes showcasing “good Soviets” over vilifying “bad Americans.”
+            </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex p-0 p-sm-1">
+                        <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="persona-text p-3 p-sm-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Alright, it’s obvious the characters are political vectors, embodying the values and ideologies of each side. But surely, they’re not just that… right? Maybe they also mirror trends in public opinion? 🤔 I guess I’m just hoping we can pull some more nuanced insights from these characters. 🥲
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
+            <h2>Characters as Mirrors of Tensions and Public Opinion</h2>
+
+            <p>
+                Beyond embodying these archetypes—let's be honest—which are often idealistic and inaccessible, the characters could also serve to reflect a prevalent public opinion during a specific period, allowing the population to identify more easily with them. This is what we have explored through semantic analysis of the lexicon associated with each character. Here is the result (feel free to interact with the plot by activating or deactivating certain categories to better observe and compare their variations).
+            </p>
+
+            <!-- Plot: Changing themes across years-->
+            <iframe src="" width="100%" height="500px"></iframe>
+
+            <p>
+                Viewed this way, it might seem a bit chaotic. HOWEVER, we can already observe some interesting trends. The lexicon of heroism almost always dominates the other categories. Almost? We'll come back to that ;). Additionally, we see a clear increase in the presence of lexicon related to politics and power throughout the Cold War, illustrating the significant presence of this theme in films from that era. So far, everything seems coherent, but let's delve deeper and observe this evolution for each major period of the Cold War.
+            </p>
+
+            <!-- Single Level: Tabs for 5 Choices -->
+            <div class="container mt-5 p-0">
+                <!-- Single Level Pills -->
+                <ul class="nav nav-pills mb-3 justify-content-center single-level" id="uniqueTabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="unique-tab1" data-bs-toggle="pill" data-bs-target="#unique-content1" type="button" role="tab" aria-controls="unique-content1" aria-selected="true">
+                            Bloc Establishment
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="unique-tab2" data-bs-toggle="pill" data-bs-target="#unique-content2" type="button" role="tab" aria-controls="unique-content2" aria-selected="false">
+                            Major Crisis and Tensions
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="unique-tab3" data-bs-toggle="pill" data-bs-target="#unique-content3" type="button" role="tab" aria-controls="unique-content3" aria-selected="false">
+                            La Détente
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="unique-tab4" data-bs-toggle="pill" data-bs-target="#unique-content4" type="button" role="tab" aria-controls="unique-content4" aria-selected="false">
+                            Second Cold War
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="unique-tab5" data-bs-toggle="pill" data-bs-target="#unique-content5" type="button" role="tab" aria-controls="unique-content5" aria-selected="false">
+                            End Of Cold War
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Single Level Content -->
+                <div class="tab-content" id="uniqueTabContent">
+                    <div class="tab-pane fade show active" id="unique-content1" role="tabpanel" aria-labelledby="unique-tab1">
+                        <h3 class="h5">Bloc Establishment</h3>
+                        <p>The rise in ideological tensions is reflected in the increased frequency of politics & power themes (from 0.25 to 0.35). The evolution of heroic themes (from 0.4 to 0.45) may reflect the construction of heroic figures tied to political ideals (for example, patriotic characters in Western films or exemplary workers in Soviet films). We also observe a clear increase in the representation of support & solidarity (from 0.14 to 0.21), which could be linked to calls for national unity and social cohesion in the context of world's bipolarisation.</p>
+                    </div>
+                    <div class="tab-pane fade" id="unique-content2" role="tabpanel" aria-labelledby="unique-tab2">
+                        <h3 class="h5">Major Crisis and Tensions</h3>
+                        <p>The heroic and politics & power categories remain high and relatively stable, with no notable change in trend. However, a clear increase in deception is visible in 1955, perhaps linked to political summits and negotiations such as the 1955 Geneva Conference, which was an attempt at détente but yielded no concrete results, leading to widespread disappointment. Additionally, a peak is observed in 1962, which occurs after the construction of the Berlin Wall in 1961 and coincides with the start of the Cuban Missile Crisis, a pivotal moment in the Cold War that also marked the beginning of the Détente.</p>
+                    </div>
+                    <div class="tab-pane fade" id="unique-content3" role="tabpanel" aria-labelledby="unique-tab3">
+                        <h3 class="h5">La Détente</h3>
+                        <p>The beginning of this period shows a slight increase (in 1965) in the theme of love & affection, perhaps indicating a desire for more positive human relationships after the world narrowly avoided catastrophe. Although heroism is present, there is a downward trend between 1969 and 1973, which coincides with a significant increase in politics-related topics. One possible explanation is the presence of American troops in Vietnam and the unprecedented media coverage of this conflict. These were challenging years for the American executive, marked by numerous scandals and a decrease in support from the American population. The rise in deception and the decline in pride also illustrate these facts. source</p>
+                    </div>
+                    <div class="tab-pane fade" id="unique-content4" role="tabpanel" aria-labelledby="unique-tab4">
+                        <h3 class="h5">Second Cold War</h3>
+                        <p>Tensions resurface, heroism and politics remain constant, while solidarity, already scarce, decreases significantly. The term law appears slightly more frequently than in other periods, reflecting an effort to curb arms production and violence through treaties to prevent another crisis like the one in Cuba.</p>
+                    </div>
+                    <div class="tab-pane fade" id="unique-content5" role="tabpanel" aria-labelledby="unique-tab5">
+                        <h3 class="h5">End Of Cold War</h3>
+                        <p>Starting in 1988, a notable decrease in politics & power is observed, reflecting the easing of tensions, particularly with the fall of the Berlin Wall in 1989. Their frequency drops to 0.27, after fluctuating around 0.35 throughout the conflict. In 1991, political themes are even surpassed by deception, which reaches its maximum frequency, while support & solidarity reach their lowest levels. This illustrates the profound impact of the conflict on populations and could indicate a loss of bearings at the end of these tumultuous years. The decline in support & solidarity also suggests a weakening of collective ideals, marking a transition towards more individualistic concerns.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Single Level Tabs -->
+
+            
             <!-- TABS NESTED -->
             <div class="container mt-5 p-0">
                 <!-- First Level Pills -->
@@ -751,32 +922,6 @@
                 </div>
             </div>
 
-            <h1 id="section2">Section 1</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci orci, cursus id purus sit amet, varius feugiat urna. Sed vel rutrum lorem, sed accumsan lectus. Maecenas volutpat est nec ultrices malesuada. Integer facilisis luctus vulputate. Suspendisse pharetra at nulla ut varius. Nunc vehicula pulvinar sem nec sodales. Donec urna neque, vehicula pulvinar risus id, tincidunt aliquet magna. Donec non lacus neque. Quisque nisi velit, feugiat ac tellus ac, porta commodo quam. Sed a fermentum ligula.
-                Mauris ornare tellus dui, ac mollis lorem elementum ut. Aenean venenatis velit commodo, luctus mauris in, blandit libero. In rutrum ornare sapien, id lacinia est. Duis elit nisl, lobortis sed tristique ac, dictum a diam. Aliquam convallis enim justo, et dignissim lacus consectetur tempor. Suspendisse felis massa, dapibus tempor erat in, tempor auctor velit. In hendrerit diam a dapibus posuere. Aenean purus tortor, pretium nec ex eu, tempor posuere dolor.
-            </p>
-            <iframe src="graphs/test.html" width="100%" height="500px"></iframe>
-            <p>
-                Donec feugiat metus quis porta vulputate. Aenean vel neque auctor, vestibulum lacus non, gravida nulla. Curabitur congue euismod erat vel varius. Vestibulum in laoreet nisi. In mattis felis eu purus rhoncus, in faucibus enim tempus. Etiam quis turpis magna. Fusce maximus diam erat, sed rhoncus nisl vehicula vitae. Aenean quis rutrum tortor, consectetur pulvinar nunc. Donec venenatis tincidunt est. Fusce mauris sapien, pretium a aliquam sit amet, suscipit id enim. Aenean a felis vel risus interdum interdum. Morbi faucibus iaculis elementum. Proin ante quam, aliquet sit amet quam nec, viverra ultricies odio. Aenean euismod velit posuere varius commodo.
-            </p>
-            <h1 id="section3">Section 2</h1>
-            <p>Content for Section 2...</p>
-
-            <h1 id="section4">Section 3</h1>
-            <p>Content for Section 3...</p>
-
-            <h1 id="section5">Section 4</h1>
-            <p>Content for Section 4...</p>
-
-            <h1 id="section6">Section 5</h1>
-            <p>Content for Section 5...</p>
-
-            <h1 id="section7">Section 6</h1>
-            <p>Content for Section 6...</p>
-
-            <h1 id="section8">Section 7</h1>
-            <p>Content for Section 7...</p>
             <div class="quiz-container">
                 <!-- Intro Slide -->
                 <div class="slide intro" id="intro">
@@ -817,6 +962,10 @@
                     <button class="btn btn-center" onclick="restartQuiz()">Start Again</button>
                 </div>
             </div>
+
+            <h1 id="section6">Let's sum up</h1>
+
+            <!-- End of main elements -->
         </div>
     </div> 
     <div class="custom-scrollbar">

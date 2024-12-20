@@ -22,5 +22,20 @@
 
 .second-level .nav-link.active {
     background-color: var(--neutral-3);
-    color: var(--neutral-4);
+    color: white;
+}
+
+.single-level .nav-link {
+    color: var(--neutral-2);
+    font-size: 0.875rem;       /* Smaller Font Size */
+    padding: 0.25rem 0.5rem;   /* Smaller Padding */
+}
+
+.single-level .nav-link.active {
+    background-color: var(--neutral-3);
+    color: white;
+}
+
+#uniqueTabContent {
+    color: var(--neutral-2);
 }
