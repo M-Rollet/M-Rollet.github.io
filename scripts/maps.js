@@ -1,48 +1,64 @@
 function createMap(mapId, geoJsonUrl, popupFormatter, legendHtml) {
-            // Initialize the map in the specified container
-            var map = L.map(mapId).setView([20, 0], 2);
-            map.scrollWheelZoom.disable();
+    // Initialize the map in the specified container
+    var map = L.map(mapId).setView([20, 0], 2);
+    map.scrollWheelZoom.disable();
 
-            // Add OpenStreetMap tiles
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-            // Load GeoJSON data
-            fetch(geoJsonUrl)
-                .then(response => response.json())
-                .then(data => {
-                    function onEachFeature(feature, layer) {
-                        if (feature.properties) {
-                            var popupContent = popupFormatter(feature.properties);
-                            layer.bindPopup(popupContent);
-                        }
+    // Load GeoJSON data
+    fetch(geoJsonUrl)
+        .then(response => response.json())
+        .then(data => {
+            function onEachFeature(feature, layer) {
+                if (feature.properties) {
+                    var popupContent = popupFormatter(feature.properties);
+                    layer.bindPopup(popupContent);
+                }
+
+                // Hover event listeners
+                layer.on({
+                    mouseover: function (e) {
+                        var layer = e.target;
+                        layer.setStyle({
+                            fillOpacity: 1,
+                            weight: 3
+                        });
+                        layer.bringToFront();
+                    },
+                    mouseout: function (e) {
+                        geojsonLayer.resetStyle(e.target);
                     }
+                });
+            }
 
-                    function style(feature) {
-                        return {
-                            fillColor: feature.properties.color,
-                            weight: 1.5,
-                            opacity: 1,
-                            color: 'black',
-                            fillOpacity: 0.7
-                        };
-                    }
+            function style(feature) {
+                return {
+                    fillColor: feature.properties.color,
+                    weight: 1.5,
+                    opacity: 1,
+                    color: 'black',
+                    fillOpacity: 0.7
+                };
+            }
 
-                    // Add the GeoJSON layer to the map
-                    L.geoJSON(data, { style: style, onEachFeature: onEachFeature }).addTo(map);
-                })
-                .catch(error => console.error('Error loading GeoJSON:', error));
+            // Add the GeoJSON layer to the map
+            var geojsonLayer = L.geoJSON(data, { style: style, onEachFeature: onEachFeature });
+            geojsonLayer.addTo(map);
+        })
+        .catch(error => console.error('Error loading GeoJSON:', error));
 
-            // Add Legend
-            var legend = L.control({ position: 'bottomright' });
+    // Add Legend
+    var legend = L.control({ position: 'bottomright' });
 
-            legend.onAdd = function () {
-                var div = L.DomUtil.create('div', 'legend');
-                div.innerHTML = legendHtml;
-                return div;
-            };
+    legend.onAdd = function () {
+        var div = L.DomUtil.create('div', 'legend');
+        div.innerHTML = legendHtml;
+        return div;
+    };
 
-            legend.addTo(map);
-        }
+    legend.addTo(map);
+}
 
         // Popup formatter for Map 1
         function popupFormatter1(properties) {
