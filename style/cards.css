@@ -34,8 +34,7 @@
 }
 
 #cardGroup1 .card {
-    border-color: var(--scale-1);
-    background-color: var(--scale-3);
+    border-color: var(--scale-2);
 }
 
 #cardGroup2 .card-footer {
@@ -44,6 +43,5 @@
 }
 
 #cardGroup2 .card {
-    border-color: var(--scale-7);
-    background-color: var(--scale-5);
+    border-color: var(--scale-6);
 }

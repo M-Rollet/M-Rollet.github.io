@@ -1,11 +1,17 @@
-function createMap(mapId, geoJsonUrl, popupFormatter, legendHtml) {
+function createMap(mapId, geoJsonUrl, popupFormatter, legendHtml, grey=false) {
     // Initialize the map in the specified container
     var map = L.map(mapId).setView([20, 0], 2);
     map.scrollWheelZoom.disable();
 
     // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
+    if(grey){
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+        }).addTo(map);
+    } else {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    }
+    
     // Load GeoJSON data
     fetch(geoJsonUrl)
         .then(response => response.json())
@@ -105,5 +111,5 @@ function createMap(mapId, geoJsonUrl, popupFormatter, legendHtml) {
             <div><div class="color-box" style="background: rgb(0,0,0);"></div> > 2000</div>
         `;
 
-        createMap('map1', '../data/map_country_side.json', popupFormatter1, legendHtml1);
+        createMap('map1', '../data/map_country_side.json', popupFormatter1, legendHtml1, true);
         createMap('map2', '../data/map_films_nb.json', popupFormatter2, legendHtml2);
