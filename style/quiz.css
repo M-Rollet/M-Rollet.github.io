@@ -96,7 +96,7 @@
 }
 .result-neutral {
     background-image: url('../img/neutral.gif');
-    background-color: rgba(242,242,242,0.9);;
+    background-color: rgba(0,0,0,.5);;
     background-blend-mode: multiply;
     background-position: center;
     background-size: cover;

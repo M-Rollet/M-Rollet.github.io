@@ -32,17 +32,18 @@ function showResult() {
 
   if (score < 0) {
     resultTitle.textContent = "You seem West-sided";
-    resultText.textContent = "Bla bla bla...";
+    resultText.textContent = "Sounds like you're vibing with denim, pop culture, and open highways!";
     resultSlide.classList.add('result-west');
   } else if (score === 0) {
-    resultTitle.textContent = "You seem neutral";
-    resultText.textContent = "Bla bla bla...";
+    resultTitle.textContent = "Are you from Switzerland?";
+    resultText.textContent = "Neutral as can be! You could blend in anywhere.";
     resultSlide.classList.add('result-neutral');
   } else {
     resultTitle.textContent = "You seem East-sided";
-    resultText.textContent = "Bla bla bla...";
+    resultText.textContent = "You give off vibes of tradition, structure, and a hint of mystery!";
     resultSlide.classList.add('result-east');
   }
+
 
   showSlide(currentSlide);
 }

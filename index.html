@@ -136,7 +136,7 @@
             </p>
 
             
-            <p class="text-center mb-1">Number of Films per country</p>
+            <h6 class="text-center mt-4">Number of Films per country</h6>
             <div id="map2" class="map-container"></div>
 
             <p>The United States and Russia stand out as the main film producers during this period,
@@ -440,14 +440,14 @@
             </p>
 
             <!-- Plot: Distrib of genres for each side-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/genres_side_by_side.html" width="100%" height="500px"></iframe>
 
             <p>
                 On a first look, we can see that the most common genres appear to approximately similar frequencies in the Western side as in the Eestern side. To better understand the differences, we can instead look at the relative difference in appearances for each genre.
             </p>
 
             <!-- Plot: Prop relative genres for sides-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <img src="graphs/Genres_Relative_Difference.png" width="100%">
 
             <p>
                 It is particularly interesting that documentaries and history movies seem to appear much more frequently (in terms of proportion) in the Eestern side than in the Western side. On the other hand, Crime movies, Thrillers, Actions and the like are much more common in the Western side than on the side of their ideological opponents. This suggests perhaps that the Western side values showcasing their ideals implicitly through entertainment, while historical and documentary movies are preferred by the Eestern side.
@@ -477,7 +477,112 @@
             </p>
 
             <!-- Plot: War movie count over periods-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <div class="container mt-5 p-0">
+                <!-- Single Level Pills -->
+                <ul class="nav nav-pills mb-3 justify-content-center single-level" id="genresTabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="genres-tab1" data-bs-toggle="pill" data-bs-target="#genres-content1" type="button" role="tab" aria-controls="genres-content1" aria-selected="true">
+                            War
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab2" data-bs-toggle="pill" data-bs-target="#genres-content2" type="button" role="tab" aria-controls="genres-content2" aria-selected="false">
+                            Action
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab3" data-bs-toggle="pill" data-bs-target="#genres-content3" type="button" role="tab" aria-controls="genres-content3" aria-selected="false">
+                            Adventure
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab4" data-bs-toggle="pill" data-bs-target="#genres-content4" type="button" role="tab" aria-controls="genres-content4" aria-selected="false">
+                            Comedy
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab5" data-bs-toggle="pill" data-bs-target="#genres-content5" type="button" role="tab" aria-controls="genres-content5" aria-selected="false">
+                            Crime
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab6" data-bs-toggle="pill" data-bs-target="#genres-content6" type="button" role="tab" aria-controls="genres-content6" aria-selected="false">
+                            Drama
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab7" data-bs-toggle="pill" data-bs-target="#genres-content7" type="button" role="tab" aria-controls="genres-content7" aria-selected="false">
+                            Family
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab8" data-bs-toggle="pill" data-bs-target="#genres-content8" type="button" role="tab" aria-controls="genres-content8" aria-selected="false">
+                            Horror
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab9" data-bs-toggle="pill" data-bs-target="#genres-content9" type="button" role="tab" aria-controls="genres-content9" aria-selected="false">
+                            Mystery
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab10" data-bs-toggle="pill" data-bs-target="#genres-content10" type="button" role="tab" aria-controls="genres-content10" aria-selected="false">
+                            Romance
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab11" data-bs-toggle="pill" data-bs-target="#genres-content11" type="button" role="tab" aria-controls="genres-content11" aria-selected="false">
+                            Science Fiction
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="genres-tab12" data-bs-toggle="pill" data-bs-target="#genres-content12" type="button" role="tab" aria-controls="genres-content12" aria-selected="false">
+                            Thriller
+                        </button>
+                    </li>
+                </ul>
+            
+                <!-- Single Level Content -->
+                <div class="tab-content mb-5" id="genresTabContent">
+                    <div class="tab-pane fade show active" id="genres-content1" role="tabpanel" aria-labelledby="genres-tab1">
+                        <iframe src="graphs/War_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content2" role="tabpanel" aria-labelledby="genres-tab2">
+                        <iframe src="graphs/Action_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content3" role="tabpanel" aria-labelledby="genres-tab3">
+                        <iframe src="graphs/Adventure_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content4" role="tabpanel" aria-labelledby="genres-tab4">
+                        <iframe src="graphs/Comedy_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content5" role="tabpanel" aria-labelledby="genres-tab5">
+                        <iframe src="graphs/Crime_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content6" role="tabpanel" aria-labelledby="genres-tab6">
+                        <iframe src="graphs/Drama_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content7" role="tabpanel" aria-labelledby="genres-tab7">
+                        <iframe src="graphs/Family_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content8" role="tabpanel" aria-labelledby="genres-tab8">
+                        <iframe src="graphs/Horror_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content9" role="tabpanel" aria-labelledby="genres-tab9">
+                        <iframe src="graphs/Mystery_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content10" role="tabpanel" aria-labelledby="genres-tab10">
+                        <iframe src="graphs/Romance_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content11" role="tabpanel" aria-labelledby="genres-tab11">
+                        <iframe src="graphs/Science Fiction_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="tab-pane fade" id="genres-content12" role="tabpanel" aria-labelledby="genres-tab12">
+                        <iframe src="graphs/Thriller_over_period.html" width="100%" height="500px"></iframe>
+                    </div>
+                </div>
+            </div>
+            
 
             <p>
                 The number of war movies during the cold war peaks between the major tensions and crises period and detente period. The evolution roughly matches the height of tensions, although the Eestern war movies seem to persist longer than their Western counterparts. This could be explained in a variety of ways, possibly by the new found "relative freedom" during the Khrushchev Thaw following a reduction in censorship after the death of Stalin who put film-makers under constant scrutiny and often required revisions to align with the state ideology.
@@ -494,14 +599,14 @@
             </p>
 
             <!-- Plot: Distrib of theme for each side-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/top_war_themes_per_side.html" width="100%" height="500px"></iframe>
 
             <p>
                 Similar to the genres’ case, the most common themes appear to similar extents in both blocs. Doing Relative difference analysis on themes that appear at least 10 times yields much more interesting results.
             </p>
 
             <!-- Plot: Prop relative themes for sides-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <img src="graphs/War_Themes_Relative_Difference.png" width="100%">
 
             <p>
                 It appears that terms like Struggle, Oppression, Occupation appear much more frequently in the Eestern side, while, somewhat paradoxically, Comedy and Adventure are their counterparts in the Western side. This could be due to Satirical movies, that hide their anti war messaging through over-exaggerated patriotism and a comedic portrayal of tragic events, "Starship Troopers" as an example, while soviet movies are generally less subtle in their messaging, as in "Come and See", often described as one of the most tragically disturbing war-movies ever.
@@ -543,7 +648,7 @@
             </p>
 
             <!-- Plot: Theme clusters-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/theme_topic_raw.html" width="100%" height="500px"></iframe>
 
             <h3 class="h5">Cluster 1 : War & Spy Dramas</h3>
                 <p>
@@ -669,13 +774,13 @@
                         <!-- Content for Second Level Pills in Option 1 -->
                         <div class="tab-content">
                         <div class="tab-pane fade show active" id="opt1-sub1" role="tabpanel" aria-labelledby="opt1-sub1-pill">
-                            <iframe src="graphs/term_ferquencies_the heroic leader.html" width="auto" height="auto"></iframe>
+                            <img src="graphs/term_ferquencies_the heroic leader.png" width="100%">
                         </div>
                         <div class="tab-pane fade" id="opt1-sub2" role="tabpanel" aria-labelledby="opt1-sub2-pill">
-                            <iframe src="graphs/term_ferquencies_the moral enforcer.html" width="100%" height="500px"></iframe>
+                            <img src="graphs/term_ferquencies_the moral enforcer.png" width="100%">
                         </div>
                         <div class="tab-pane fade" id="opt1-sub3" role="tabpanel" aria-labelledby="opt1-sub3-pill">
-                            <iframe src="graphs/term_ferquencies_the individualistic rebel.html" width="100%" height="500px"></iframe>
+                            <img src="graphs/term_ferquencies_the individualistic rebel.png" width="100%">
                         </div>
                         </div>
                     </div>
@@ -698,13 +803,13 @@
                         <!-- Content for Second Level Pills in Option 2 -->
                         <div class="tab-content">
                         <div class="tab-pane fade show active" id="opt2-sub1" role="tabpanel" aria-labelledby="opt2-sub1-pill">
-                            <iframe src="graphs/term_ferquencies_the tragic hero.html" width="100%" height="500px"></iframe>
+                            <img src="graphs/term_ferquencies_the tragic hero.png" width="100%">
                         </div>
                         <div class="tab-pane fade" id="opt2-sub2" role="tabpanel" aria-labelledby="opt2-sub2-pill">
-                            <iframe src="graphs/term_ferquencies_the authoritarian villain.html" width="100%" height="500px"></iframe>
+                            <img src="graphs/term_ferquencies_the authoritarian villain.png" width="100%">
                         </div>
                         <div class="tab-pane fade" id="opt2-sub3" role="tabpanel" aria-labelledby="opt2-sub3-pill">
-                            <iframe src="graphs/term_ferquencies_the community defender.html" width="100%" height="500px"></iframe>
+                            <img src="graphs/term_ferquencies_the community defender.png" width="100%">
                         </div>
                         </div>
                     </div>
@@ -828,7 +933,7 @@
                 To understand why the "American villain" archetype is absent, we analyzed the distribution of these archetypes based on the film's side.
             </p>
 
-            <iframe src="graphs/western_archetypes_distrib.html" width="100%" height="500px"></iframe>
+            <img src="graphs/western_archetypes_distrib.png" width="100%" height="auto">
 
             <!-- Persona comment -->
             <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
@@ -923,23 +1028,23 @@
                 <!-- Single Level Content -->
                 <div class="tab-content mb-5" id="uniqueTabContent">
                     <div class="tab-pane fade show active" id="unique-content1" role="tabpanel" aria-labelledby="unique-tab1">
-                        <iframe src="graphs/theme_char_blocs_estab.html" width="100%" height="500px"></iframe>
+                        <img src="graphs/theme_char_blocs_estab.png" width="100%">
                         <p>The rise in ideological tensions is reflected in the increased frequency of politics & power themes (from 0.25 to 0.35). The evolution of heroic themes (from 0.4 to 0.45) may reflect the construction of heroic figures tied to political ideals (for example, patriotic characters in Western films or exemplary workers in Soviet films). We also observe a clear increase in the representation of support & solidarity (from 0.14 to 0.21), which could be linked to calls for national unity and social cohesion in the context of world's bipolarisation.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content2" role="tabpanel" aria-labelledby="unique-tab2">
-                        <iframe src="graphs/theme_char_major_crises.html" width="100%" height="500px"></iframe>
+                        <img src="graphs/theme_char_major_crises.png" width="100%">
                         <p>The heroic and politics & power categories remain high and relatively stable, with no notable change in trend. However, a clear increase in deception is visible in 1955, perhaps linked to political summits and negotiations such as the 1955 Geneva Conference, which was an attempt at détente but yielded no concrete results, leading to widespread disappointment. Additionally, a peak is observed in 1962, which occurs after the construction of the Berlin Wall in 1961 and coincides with the start of the Cuban Missile Crisis, a pivotal moment in the Cold War that also marked the beginning of the Détente.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content3" role="tabpanel" aria-labelledby="unique-tab3">
-                        <iframe src="graphs/theme_char_detente.html" width="100%" height="500px"></iframe>
+                        <img src="graphs/theme_char_detente.png" width="100%">
                         <p>The beginning of this period shows a slight increase (in 1965) in the theme of love & affection, perhaps indicating a desire for more positive human relationships after the world narrowly avoided catastrophe. Although heroism is present, there is a downward trend between 1969 and 1973, which coincides with a significant increase in politics-related topics. One possible explanation is the presence of American troops in Vietnam and the unprecedented media coverage of this conflict. These were challenging years for the American executive, marked by numerous scandals and a decrease in support from the American population. The rise in deception and the decline in pride also illustrate these facts<a href="#source11"><sup>[11]</sup></a>.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content4" role="tabpanel" aria-labelledby="unique-tab4">
-                        <iframe src="graphs/theme_char_2nd_cold_war.html" width="100%" height="500px"></iframe>
+                        <img src="graphs/theme_char_2nd_cold_war.png" width="100%">
                         <p>Tensions resurface, heroism and politics remain constant, while solidarity, already scarce, decreases significantly. The term law appears slightly more frequently than in other periods, reflecting an effort to curb arms production and violence through treaties to prevent another crisis like the one in Cuba.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content5" role="tabpanel" aria-labelledby="unique-tab5">
-                        <iframe src="graphs/theme_char_end_war.html" width="100%" height="500px"></iframe>
+                        <img src="graphs/theme_char_end_war.png" width="100%">
                         <p>Starting in 1988, a notable decrease in politics & power is observed, reflecting the easing of tensions, particularly with the fall of the Berlin Wall in 1989. Their frequency drops to 0.27, after fluctuating around 0.35 throughout the conflict. In 1991, political themes are even surpassed by deception, which reaches its maximum frequency, while support & solidarity reach their lowest levels. This illustrates the profound impact of the conflict on populations and could indicate a loss of bearings at the end of these tumultuous years. The decline in support & solidarity also suggests a weakening of collective ideals, marking a transition towards more individualistic concerns.</p>
                     </div>
                 </div>
@@ -960,26 +1065,34 @@
             
                 <!-- Question Slides -->
                 <div class="slide question" id="question1">
-                    <h3>Do you prefer sunsets or sunrises?</h3>
+                    <h3>When facing a dangerous situation, do you confront it head-on or endure it patiently?</h3>
                     <div class="btn-options">
-                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Sunsets</button>
-                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Sunrises</button>
+                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Bravery</button>
+                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Resilience</button>
                     </div>
                 </div>
             
                 <div class="slide question" id="question2">
-                    <h3>Mountains or Beaches?</h3>
+                    <h3>Do you prefer guiding others toward a goal or having the ability to influence outcomes?</h3>
                     <div class="btn-options">
-                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Mountains</button>
-                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Beaches</button>
+                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Leader</button>
+                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Power</button>
                     </div>
                 </div>
             
                 <div class="slide question" id="question3">
-                    <h3>Cold weather or Warm weather?</h3>
+                    <h3>Would you rather be the source of conflict in a story or a flawed protagonist?</h3>
                     <div class="btn-options">
-                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Cold</button>
-                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Warm</button>
+                        <button class="btn btn-primary btn-ans-1" onclick="answer(1)">Antagonist</button>
+                        <button class="btn btn-primary btn-ans-2" onclick="answer(-1)">Antihero</button>
+                    </div>
+                </div>
+
+                <div class="slide question" id="question4">
+                    <h3>Do you value the ability to choose your path or the responsibility to fulfill obligations?</h3>
+                    <div class="btn-options">
+                        <button class="btn btn-primary btn-ans-1" onclick="answer(1)">Freedom</button>
+                        <button class="btn btn-primary btn-ans-2" onclick="answer(-1)">Duty</button>
                     </div>
                 </div>
             
