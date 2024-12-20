@@ -51,7 +51,7 @@
         <div class="col-11 col-lg-8 col-xl-6">
             
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -72,16 +72,11 @@
             <h1 id="section1">Introduction</h1>
             <h2>What are these secrets about?</h2>
             <p>
-                During the Cold War, both the Western and Eastern blocs relied on soft power to spread ideological messages and influence global opinion, with cinema emerging as a key medium for this influence. This story explores how cinema served as a subtle but potent tool for political messaging during this period. In particular, how cinema can not only entertain but also embed ideologies, shape public views, and reflect the values and power dynamics of its time. To unveil these secrets, three main angles were explored:
-                <ul>
-                    <li>How international power dynamics and influence are reflected in film production.</li>
-                    <li>How the themes and narratives of films were crafted to convey and promote specific ideologies.</li>
-                    <li>How film characters were used, either as tools to manipulate populations or as mirrors of society.</li>
-                </ul> 
+                During the Cold War, both the Western and Eastern blocs turned to cinema as a subtle yet powerful tool to influence global opinion and spread ideological messages. Films weren’t just about entertainment—they carried deeper meanings, embedding values, shaping public views, and reflecting the power dynamics of the time. In this story, we explore how cinema played its part in the Cold War through three lenses: the power dynamics behind film production, the ideological messages woven into themes and narratives, and the ways characters reflected or influenced society.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -91,33 +86,68 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                Interesting, eh? I told you so 😎. You've been lied to, but don't panic - Datamigos are here to set the record straight.
+                                Interesting, eh? I told you so <span style="font-style:normal;">😎</span>. You've been lied to, but don't panic - Datamigos are here to set the record straight.
                             </i></p>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- End of comment -->
-              
-                        
-            <h2>Let's get our hands dirty!</h1>
-            <p>The first step was to build a suitable dataset for this ambitious project. It's important to note that the original dataset was quite "America-centric," which was a bit problematic for our study. To address this, we extended it with other datasets (source link) to achieve a more balanced representation, with more movies coming from other countries like Russia or Soviet Union. </p>
             
+            <h2>Let's get our hands dirty!</h1>
+            <p>
+                The first step is to build a suitable dataset for this ambitious project. It's important to note that the original dataset<sup><a href="#source1">[1]</a></sup> is quite "America-centric", which is a bit problematic for our study. To address this, we extend it with other datasets<sup><a href="#source2">[2,</a><a href="#source3">3]</a></sup> to achieve a more balanced representation, with more movies coming from other countries like Russia or Soviet Union. 
+            </p>
+
+            <p>
+                Working with this collection of movie plot summaries, we want to find out if each movie is connected to the Cold War. If it is, we aim to identify which side it supports, the character that best represents each side’s values (e.g. protagonist vs. antagonist), and to extract keywords about the movie's themes for added context.
+            </p>
+            <p>
+                Thanks to recent advances in NLP and large language models, we can use prompt engineering and GPT-4o mini for this task. For each movie, we input its release year, title, and plot summary. In return, we get new information about which side it might support, the themes it covers, the values tied to each bloc, and the characters who represent those values.
+            </p>
+            <p>
+                In total, we identify 6,061 movies that are associated with one of the blocs. They represent around 25% of our dataset with a good balance between the Western and Eastern blocs, which is a non-negligible proportion of our dataset.
+            </p>
+
+            <iframe src="graphs/movies_distrib.html" width="100%" height="500px"></iframe>
+
+            <!-- Persona comment -->
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex p-0 p-sm-1">
+                        <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="persona-text p-3 p-sm-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Smart move by the Datamigos to use OpenAI GPT for speeding up the pre-processing! <span style="font-style:normal;">💡</span> That said, keep in mind that LLMs can sometimes make mistakes. Even though this tool was used with good intentions and that efforts were made to minimize "hallucinations," its responses aren’t 100% accurate. It’s important to keep this limitation in mind throughout the study. Also, don’t forget that OpenAI GPT tends to reflect a Western cultural bias. This may influence its interpretations and could underrepresented perspectives from other parts of the world.
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
             <h1 id="section2">A first glance at the data</h1>
-            <p>After data augmentation and pre-processing, we ended up with a dataset containing 25621 films released between 1945 and 1995, of which 2919 are classified as Eastern side and 3142 as Western side. The map below – which you can explore – shows the number of movies released by countries.</p>
+            <p>
+                After data augmentation and pre-processing, we end up with a dataset containing 25,621 films released between 1945 and 1995, of which 2,919 are classified as Eastern side and 3,142 as Western side. The map below—which you can explore—shows the number of movies released by countries.
+            </p>
+
             
             <p class="text-center mb-1">Number of Films per country</p>
             <div id="map2" class="map-container"></div>
 
             <p>The United States and Russia stand out as the main film producers during this period,
-                with 8239 and 10853 films respectively. This clearly illustrates their global dominance and Soft Power.
+                with 8,239 and 10,853 films respectively. This clearly illustrates their global dominance and Soft Power.
                 There are also a large number of films from European countries such as France, United Kingdom, Italy and Germany.
                 These countries play a relevant role in our study and could prove essential in the analysis of
                 international collaboration in the film industry.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -135,19 +165,19 @@
             </div>
             <!-- End of comment -->
 
-            <p>We also examined the distribution of films over year throughout the Cold War to identify
+            <p>We also examine the distribution of films over year throughout the Cold War to identify
                 trends that could provide insights for our analysis.
             </p>
 
             <!-- Plot: Nb of movies per year-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/nb_movies_by_year.html" width="100%" height="500px"></iframe>
 
             <p>Throughout the Cold War, the number of films produced rose steadily.
                 This suggests that cinema played an increasingly important role in the ideological conflict.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -157,7 +187,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                And considering how the number of films dropped after 1991, it’s clear that cinema was used for other purposes than just entertainment during the Cold War 🧐.
+                                And considering how the number of films dropped after 1991, it’s clear that cinema was used for other purposes than just entertainment during the Cold War <span style="font-style: normal;">🧐</span>.
                             </i></p>
                         </div>
                     </div>
@@ -165,25 +195,24 @@
             </div>
             <!-- End of comment -->
 
-            <p>Ce sont les résultats que nous avons obtenus pour l’ensemble des films de notre dataset.
-                Maintenant, si on se penche uniquement sur les films qui montrent un penchant clair pour
-                un des Blocs on observe la répartition suivante.
+            <p>
+                These are the results for all the films in our dataset. If we focus exclusively on the films with a clear alignment toward one of the Cold War blocs, we observe the following distribution.
             </p>
 
             <!-- Plot: Evolution of nb of movies per side per year-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/evol_nb_movies.html" width="100%" height="500px"></iframe>
 
             <p>
                 From the beginning of the Cold War, the Western Bloc (United States and its allies) quickly seemed
                 to take the lead in film production, or at least, the number of films classified as Western dominated.
                 This was likely aimed at asserting its cultural and ideological power in response to rising tensions.
-                The production of western oriented films can be seen as a strategy to promote capitalist and democratic
+                The production of Western oriented films can be seen as a strategy to promote capitalist and democratic
                 ideals, not only to its own audience but also to influence allies – ensuring they did not switch sides –
                 and neutral countries.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -193,7 +222,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                Oh, about that! I came across an article (source: https://zonecampus.ca/un-peu-dhistoire-le-cinema-americain-en-temps-de-guerre/)
+                                Oh, about that! I came across an article<sup><a href="#source4">[4]</a></sup>
                                 that mentioned how the USA had already started using cinema during World War II to promote the American democratic way of life. Maybe they were more prepared than the USSR and already knew how to use cinema to their advantage.
                             </i></p>
                         </div>
@@ -213,7 +242,7 @@
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -223,7 +252,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                Well, talk about a plot twist! 🎥 From Western dominance to an Eastern comeback, it’s like a cinematic war for hearts and minds. And we're just scratching the surface with these global trends. Just imagine what Datamigos has lined up next! 😏 I won't spoil it for you — go read on, so that we can chat about it!
+                                Well, talk about a plot twist! <span style="font-style:normal;">🎥</span> From Western dominance to an Eastern comeback, it’s like a cinematic war for hearts and minds. And we're just scratching the surface with these global trends. Just imagine what Datamigos has lined up next! <span style="font-style:normal;">😏</span> I won't spoil it for you—go read on, so that we can chat about it!
                             </i></p>
                         </div>
                     </div>
@@ -231,13 +260,13 @@
             </div>
             <!-- End of comment -->
 
-            <h1 id="section3">The reflection of international dynamics and influences in film production</h1>
+            <h1 id="section3">International Influences in Film Production</h1>
             <p>
-                Clearly, the USA and the USSR are superpowers, demonstrating their superiority on all levels, including film production, as we've just seen. Yet beyond their status, these two nations seek to “dominate” the world and rally as many countries as possible to their ideology. To achieve this goal, they cannot act alone. They must form alliances to contain the expansion of their adversaries and warn off potential aggression.
+                Clearly, the USA and the USSR are superpowers, demonstrating their superiority on all levels, including film production, as we've just seen. Yet beyond their status, these two nations seek to "dominate" the world and rally as many countries as possible to their ideology. To achieve this goal, they cannot act alone. They must form alliances to contain the expansion of their adversaries and warn off potential aggression.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -247,7 +276,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                Alliances during the Cold War were super important and above all MULTIDIMENSIONAL (wow, that’s a long word!), covering political, economic, and cultural aspects. I bet they’re diving into the cultural side through cinema! 🤓
+                                Alliances during the Cold War were super important and above all MULTIDIMENSIONAL (wow, that’s a long word!), covering political, economic, and cultural aspects. I bet they’re diving into the cultural side through cinema! <span style="font-style:normal;">🤓</span>
                             </i></p>
                         </div>
                     </div>
@@ -263,12 +292,11 @@
             <div id="map1" class="map-container"></div>
 
             <p>
-                The map clearly shows the alliances formed during the Cold War, as we can mainly identify member countries of
+                The map clearly shows the alliances<a href="#source5"><sup>[5]</sup></a> formed during the Cold War, as we can mainly identify member countries of
                 <ul>
                     <li>The Warsaw Pact</li>
                     <li>NATO</li>
                 </ul>
-                https://fr.wikipedia.org/wiki/Guerre_froide
             </p>
 
             <p>
@@ -277,14 +305,11 @@
 
             <p>
                 As mentioned above, the map once again shows the superiority of American and Russian productions in terms of numbers. As our dataset does not have much information for African and South American countries, we clearly see a lack of analysis possibilities in these regions on the map.
-            </p>
-
-            <p>
                 We do, however, have one clear initial result: film production was an important geopolitical propaganda tool during the Cold War. De facto, war imagery is a powerful tool for influencing the masses.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -312,25 +337,25 @@
             </p>
 
             <!-- Plot: Collaboration network-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/static_graph.html" width="100%" height="500px"></iframe>
 
             <p>
                 A key observation is the tendency to form numerous co-productions between the United States and the Western European countries. This surge in collaborations could be seen as a strategic effort from the US to strengthen political and cultural ties with allies, using film as a tool for soft power during the Cold War.
             </p>
 
             <p>
-                In stark contrast, the USSR appears to have limited co-production in the film industry. This lack of collaboration may be attributed to the desire of Soviet authorities to retain full control over the narratives, allowing them to use cinema as a vehicle for their propaganda. This theory is further supported by the highly centralized nature of the Soviet film industry, where the government tightly regulated production, unlike in the more decentralized Western bloc. Additionally, it is worth considering the cultural context. The theatre attendance in the USSR during this period was significantly higher than in the US, suggesting that the domestic market was flourishing enough to reduce the urgency for international collaborations.
+                In stark contrast, the USSR appears to have limited co-production in the film industry. This lack of collaboration may be attributed to the desire of Soviet authorities to retain full control over the narratives, allowing them to use cinema as a vehicle for their propaganda. This theory is further supported by the highly centralized nature of the Soviet film industry, where the government tightly regulated production, unlike in the more decentralized Western bloc. Additionally, it is worth considering the cultural context. The theatre attendance in the USSR during this period was significantly higher than in the US<a href="source6"><sup>[6]</sup></a>, suggesting that the domestic market was flourishing enough to reduce the urgency for international collaborations.
             </p>
 
             <!-- Plot: Collaboration map-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/static_map.html" width="100%" height="500px"></iframe>
 
             <p>
                 Interestingly, despite occasional connections with Western nations, the countries situated in the center and north of Europe preserved their neutral positioning, navigating the global tension with cautious diplomacy. 
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -340,7 +365,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                This makes me think of a certain country… sound familiar? Well, Switzerland 🇨🇭 — look closely! You’ll notice it has ties to the Western bloc in film production, yet it remained largely neutral in its political engagement.
+                                This makes me think of a certain country… sound familiar? Well, Switzerland<span style="font-style:normal;">🇨🇭</span>—look closely! You’ll notice it has ties to the Western bloc in film production, yet it remained largely neutral in its political engagement.
                             </i></p>
                         </div>
                     </div>
@@ -359,21 +384,21 @@
             </p>
 
             <!-- Plot: Top 25 languages in movies-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/top_languages.html" width="100%" height="500px"></iframe>
 
             <p>
                 When we delve deeper into the language distribution for each bloc, the trend of English dominance remains consistent, even within films produced by Eastern bloc countries. This is a striking observation, as it highlights the reach of US cultural influence, which managed to penetrate even the closed-off environments of Eastern bloc cinema. The widespread use of English in the Eastern bloc suggests that the USA made important efforts to spread its cultural ideals, creating an undeniable link between language and political influence.
             </p>
 
             <!-- Plot: Top 20 languages-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/top_languages_per_side.html" width="100%" height="500px"></iframe>
 
             <p>
                 Interestingly, this phenomenon also hints at the reverse: Eastern bloc countries may have seen the benefit of using English to promote their ideas and narratives to Western audiences. In the context of the Cold War, where ideological battles were especially fought through cultural influence, the use of English in Eastern bloc films could be viewed as an attempt to make their voices heard within the global conversation.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -383,7 +408,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                It is crazy all we can infer just from the films a country produced and the languages they were translated into! 😱 One clear takeaway is that the USA was more open to collaborating with other countries – using cinema to strengthen political and cultural ties – while the USSR was all about controlling the narrative. Plus, the dominance of English in international cinema underscores the spread of US cultural influence, while also hinting at the Eastern bloc's attempts to reach Western audiences.
+                                It is crazy all we can infer just from the films a country produced and the languages they were translated into! <span style="font-style:normal;">😱</span> One clear takeaway is that the USA was more open to collaborating with other countries–using cinema to strengthen political and cultural ties–while the USSR was all about controlling the narrative. Plus, the dominance of English in international cinema underscores the spread of US cultural influence, while also hinting at the Eastern bloc's attempts to reach Western audiences.
                             </i></p>
                         </div>
                     </div>
@@ -392,14 +417,14 @@
             <!-- End of comment -->
 
 
-            <h1 id="section4">Thematic and Narrative Strategies in Movies to Promote Specific Ideologies</h1>
+            <h1 id="section4">Thematic and Narrative in Movies to Promote Ideologies</h1>
 
             <p>
-                Now that we know that countries produce films oriented towards either side, and that they collaborate within these blocs to disseminate their ideas more widely, the question arises of what it means for a film to be classified as Eastern or Western. What are the characteristics of each classification, and more importantly, how do films convey the ideologies and values they aim to promote through the themes they address — namely, capitalism in the West and communism in the East?
+                Now that we know that countries produce films oriented towards either side, and that they collaborate within these blocs to disseminate their ideas more widely, the question arises of what it means for a film to be classified as Eastern or Western. What are the characteristics of each classification, and more importantly, how do films convey the ideologies and values they aim to promote through the themes they address—namely, capitalism in the West and communism in the East?
             </p>
 
             <p>
-                Before proceeding with the analysis, we want to define some key periods of the Cold War that we will frequently refer to in the subsequent sections. These periods, identified from two websites, will help us explore the evolution of genres, themes, and even characters (covered in the last part):
+                Before proceeding with the analysis, we want to define some key periods of the Cold War that we will frequently refer to in the subsequent sections. These periods, identified from two websites<sup><a href="source7">[7,</a><a href="source8">8]</a></sup>, will help us explore the evolution of genres, themes, and even characters (covered in the last part):
                 <ul>
                     <li>1947 - 1953: Blocs Establishment</li>
                     <li>1954 - 1962: Major tensions and crises</li>
@@ -414,22 +439,22 @@
                 The genre of a movie is one of the first classifications that one can look at to understand the sort of movie one is about to watch. It is therefore interesting to look at how the distribution of genres differ across both sides, and how they evolved over time.
             </p>
 
-            <!-- Plot: Distrib of genres ofr each side-->
+            <!-- Plot: Distrib of genres for each side-->
             <iframe src="" width="100%" height="500px"></iframe>
 
             <p>
-                On a first look, we can see that the most common genres appear to approximately similar frequencies in the western side as in the eastern side. To better understand the differences, we can instead look at the relative difference in appearances for each genre.
+                On a first look, we can see that the most common genres appear to approximately similar frequencies in the Western side as in the Eestern side. To better understand the differences, we can instead look at the relative difference in appearances for each genre.
             </p>
 
             <!-- Plot: Prop relative genres for sides-->
             <iframe src="" width="100%" height="500px"></iframe>
 
             <p>
-                It is particularly interesting that documentaries and history movies seem to appear much more frequently (in terms of proportion) in the eastern side than in the western side. On the other hand, Crime movies, Thrillers, Actions and the like are much more common in the western side than on the side of their ideological opponents. This suggests perhaps that the western side values showcasing their ideals implicitly through entertainment, while historical and documentary movies are preferred by the eastern side.
+                It is particularly interesting that documentaries and history movies seem to appear much more frequently (in terms of proportion) in the Eestern side than in the Western side. On the other hand, Crime movies, Thrillers, Actions and the like are much more common in the Western side than on the side of their ideological opponents. This suggests perhaps that the Western side values showcasing their ideals implicitly through entertainment, while historical and documentary movies are preferred by the Eestern side.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -439,7 +464,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                This ties in perfectly with what I read in an article, which highlighted how American films were all about action and celebrating the ‘American way of life’, while Soviet films lean more towards auteur cinema, rooted in Soviet realism – an official artistic doctrine in Eastern Bloc countries designed to promote communist ideals and portray the social realities of the working class. So, it’s no surprise that Soviet cinema features more documentaries and fewer action-packed blockbusters.
+                                This ties in perfectly with what I read in an article<a href="#source9"><sup>[9]</sup></a>, which highlighted how American films were all about action and celebrating the "American way of life", while Soviet films lean more towards auteur cinema, rooted in Soviet realism – an official artistic doctrine in Eastern Bloc countries designed to promote communist ideals and portray the social realities of the working class. So, it’s no surprise that Soviet cinema features more documentaries and fewer action-packed blockbusters.
                             </i></p>
                         </div>
                     </div>
@@ -448,14 +473,14 @@
             <!-- End of comment -->
 
             <p>
-                A meaningful example is the film by Andrei Tarkovsky  called “Ivan’s Childhood” in which the director “portrays his hatred of war” through the childhood which “contrasts most with war” and looks at the human cost without glorifying the experience(Src: Andrei Tarkovsky Interviews by John Gianvito)
+                A meaningful example is the film by Andrei Tarkovsky  called "Ivan’s Childhood" in which the director "portrays his hatred of war" through the childhood which "contrasts most with war" and looks at the human cost without glorifying the experience<a href="#source10"><sup>[10]</sup></a>.
             </p>
 
             <!-- Plot: War movie count over periods-->
             <iframe src="" width="100%" height="500px"></iframe>
 
             <p>
-                The number of war movies during the cold war peaks between the major tensions and crises period and detente period. The evolution roughly matches the height of tensions, although the eastern war movies seem to persist longer than their western counterparts. This could be explained in a variety of ways, possibly by the new found “relative freedom” during the Khrushchev Thaw following a reduction in censorship after the death of Stalin who put film-makers under constant scrutiny and often required revisions to align with the state ideology.
+                The number of war movies during the cold war peaks between the major tensions and crises period and detente period. The evolution roughly matches the height of tensions, although the Eestern war movies seem to persist longer than their Western counterparts. This could be explained in a variety of ways, possibly by the new found "relative freedom" during the Khrushchev Thaw following a reduction in censorship after the death of Stalin who put film-makers under constant scrutiny and often required revisions to align with the state ideology.
             </p>
 
             <p>
@@ -479,11 +504,11 @@
             <iframe src="" width="100%" height="500px"></iframe>
 
             <p>
-                It appears that terms like Struggle, Oppression, Occupation appear much more frequently in the eastern side, while, somewhat paradoxically, Comedy and Adventure are their counterparts in the western side. This could be due to Satirical movies, that hide their anti war messaging through over-exaggerated patriotism and a comedic portrayal of tragic events, “Starship Troopers” as an example, while soviet movies are generally less subtle in their messaging, as in “Come and See”, often described as one of the most tragically disturbing war-movies ever.
+                It appears that terms like Struggle, Oppression, Occupation appear much more frequently in the Eestern side, while, somewhat paradoxically, Comedy and Adventure are their counterparts in the Western side. This could be due to Satirical movies, that hide their anti war messaging through over-exaggerated patriotism and a comedic portrayal of tragic events, "Starship Troopers" as an example, while soviet movies are generally less subtle in their messaging, as in "Come and See", often described as one of the most tragically disturbing war-movies ever.
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -493,7 +518,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                This ties in perfectly with what I read in an article, which highlighted how American films were all about action and celebrating the ‘American way of life’, while Soviet films lean more towards auteur cinema, rooted in Soviet realism – an official artistic doctrine in Eastern Bloc countries designed to promote communist ideals and portray the social realities of the working class. So, it’s no surprise that Soviet cinema features more documentaries and fewer action-packed blockbusters.                            </i></p>
+                                Even when both blocs tackled the same topic, their approaches were totally different. The western bloc tended to deal with more complex issues in a "softer" way, trying to make messages more accessible and acceptable to the public. The Soviet Union, on the other hand, took a much more direct and straightforward approach… Not sure if it convinced people, but it definitely helped instill fear and maintaining control.
                             </i></p>
                         </div>
                     </div>
@@ -506,7 +531,7 @@
             </p>
 
             <p>
-                For more in-depth analysis of the themes present in the movies displayed in cinemas for western and eastern audiences, we will attempt to group into categories based on the overall tone and topic.
+                For more in-depth analysis of the themes present in the movies displayed in cinemas for Western and Eestern audiences, we will attempt to group into categories based on the overall tone and topic.
             </p>
 
             <h2>
@@ -545,7 +570,7 @@
             </p>
 
             <!-- Plot: Percentage distrib of topics-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <img src="graphs/theme_topic_periods.png" class="my-5" width="100%" height="auto">
 
             <p>
                 During the Cold War, both Eastern and Western films showed some shared patterns alongside clear differences in their storytelling choices. For example, around the détente period (1963-1974), both sides featured a noticeable peak in romance and social dramas. At the same time, crime and moral thrillers dipped, hinting that periods of relative calm and openness might have encouraged stories centered more on personal feelings and social life than on lawlessness or moral crises.
@@ -570,7 +595,7 @@
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -598,7 +623,7 @@
             </p>
 
             <p>
-                Our dataset contains no fewer than 7052 characters or groups of characters classified as representing one of the two blocs. Among these, 3,726 figures represent the Eastern bloc, while 3,326 represent the West. 
+                Our dataset contains no fewer than 7,052 characters or groups of characters classified as representing one of the two blocs. Among these, 3,726 figures represent the Eastern bloc, while 3,326 represent the West. 
             </p>
 
             <h2>Characters as Vectors of Ideologies</h2>
@@ -608,7 +633,83 @@
             </p>
 
             <!-- Plot: Switch between e/w characters-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <!-- TABS NESTED -->
+            <div class="container mt-5 p-0">
+                <!-- First Level Pills -->
+                <ul class="nav nav-pills mb-1 justify-content-center first-level" id="firstLevelPills" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active nav-west" id="option1-pill" data-bs-toggle="pill" data-bs-target="#option1" type="button" role="tab" aria-controls="option1" aria-selected="true">
+                            Western
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link nav-east" id="option2-pill" data-bs-toggle="pill" data-bs-target="#option2" type="button" role="tab" aria-controls="option2" aria-selected="false">
+                            Eastern
+                        </button>
+                    </li>
+                </ul>
+              
+                <!-- First Level Content -->
+                <div class="tab-content" id="firstLevelContent">
+                    <!-- Content for Option 1 -->
+                    <div class="tab-pane fade show active" id="option1" role="tabpanel" aria-labelledby="option1-pill">                        
+                        <!-- Second Level Pills for Option 1 -->
+                        <ul class="nav nav-pills mb-3 justify-content-center second-level" id="option1SecondLevel" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="opt1-sub1-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub1" type="button" role="tab" aria-controls="opt1-sub1" aria-selected="true">The Heroic Leader</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt1-sub2-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub2" type="button" role="tab" aria-controls="opt1-sub2" aria-selected="false">The Moral Enforcer</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt1-sub3-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub3" type="button" role="tab" aria-controls="opt1-sub3" aria-selected="false">The Individualistic Rebel</button>
+                        </li>
+                        </ul>
+                
+                        <!-- Content for Second Level Pills in Option 1 -->
+                        <div class="tab-content">
+                        <div class="tab-pane fade show active" id="opt1-sub1" role="tabpanel" aria-labelledby="opt1-sub1-pill">
+                            <iframe src="graphs/term_ferquencies_the heroic leader.html" width="auto" height="auto"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="opt1-sub2" role="tabpanel" aria-labelledby="opt1-sub2-pill">
+                            <iframe src="graphs/term_ferquencies_the moral enforcer.html" width="100%" height="500px"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="opt1-sub3" role="tabpanel" aria-labelledby="opt1-sub3-pill">
+                            <iframe src="graphs/term_ferquencies_the individualistic rebel.html" width="100%" height="500px"></iframe>
+                        </div>
+                        </div>
+                    </div>
+                
+                    <!-- Content for Option 2 -->
+                    <div class="tab-pane fade" id="option2" role="tabpanel" aria-labelledby="option2-pill">                
+                        <!-- Second Level Pills for Option 2 -->
+                        <ul class="nav nav-pills mb-3 justify-content-center second-level" id="option2SecondLevel" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="opt2-sub1-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub1" type="button" role="tab" aria-controls="opt2-sub1" aria-selected="true">The Tragic Hero</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt2-sub2-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub2" type="button" role="tab" aria-controls="opt2-sub2" aria-selected="false">The Authoritarian Villain</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt2-sub3-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub3" type="button" role="tab" aria-controls="opt2-sub3" aria-selected="false">The Community Defender</button>
+                        </li>
+                        </ul>
+                
+                        <!-- Content for Second Level Pills in Option 2 -->
+                        <div class="tab-content">
+                        <div class="tab-pane fade show active" id="opt2-sub1" role="tabpanel" aria-labelledby="opt2-sub1-pill">
+                            <iframe src="graphs/term_ferquencies_the tragic hero.html" width="100%" height="500px"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="opt2-sub2" role="tabpanel" aria-labelledby="opt2-sub2-pill">
+                            <iframe src="graphs/term_ferquencies_the authoritarian villain.html" width="100%" height="500px"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="opt2-sub3" role="tabpanel" aria-labelledby="opt2-sub3-pill">
+                            <iframe src="graphs/term_ferquencies_the community defender.html" width="100%" height="500px"></iframe>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <p>
                 The extraction of these themes reveals two interesting points:
@@ -727,8 +828,10 @@
                 To understand why the "American villain" archetype is absent, we analyzed the distribution of these archetypes based on the film's side.
             </p>
 
+            <iframe src="graphs/western_archetypes_distrib.html" width="100%" height="500px"></iframe>
+
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -747,15 +850,15 @@
             <!-- End of comment -->
 
             <p>
-                We can identify two distinct strategies employed by the two blocs. On one hand, the Western Bloc, while predominantly showcasing characters aligned with its own side (725 western characters), does not overlook portraying adversaries (569 eastern characters). In fact, it often depicts them negatively—269 authoritarian villains out of 569 characters, roughly one in two. Western representatives, however, are consistently portrayed as engaging archetypes, embodying Western values (as outlined in our archetypes cards). Even when complex figures like antiheroes are featured, they remain compelling and intriguing for the audience.
+                We can identify two distinct strategies employed by the two blocs. On one hand, the Western Bloc, while predominantly showcasing characters aligned with its own side (725 Western characters), does not overlook portraying adversaries (569 Eestern characters). In fact, it often depicts them negatively—269 authoritarian villains out of 569 characters, roughly one in two. Western representatives, however, are consistently portrayed as engaging archetypes, embodying Western values (as outlined in our archetypes cards). Even when complex figures like antiheroes are featured, they remain compelling and intriguing for the audience.
             </p>
 
             <p>
-                On the other hand, the Soviet Union takes a different approach, focusing on its own representatives (850 eastern characters), often portrayed as Tragic Heroes or Community Defenders who embody communist ideologies. While there are a few “negative” portrayals of Eastern characters, they are negligible (200 out of over 850). Moreover, Western characters are rarely featured in Soviet films (267 western characters), and when they do appear,  they are not particularly negatively portrayed. Instead, Soviet cinema prioritizes showcasing “good Soviets” over vilifying “bad Americans.”
+                On the other hand, the Soviet Union takes a different approach, focusing on its own representatives (850 Eestern characters), often portrayed as Tragic Heroes or Community Defenders who embody communist ideologies. While there are a few "negative" portrayals of Eastern characters, they are negligible (200 out of over 850). Moreover, Western characters are rarely featured in Soviet films (267 Western characters), and when they do appear,  they are not particularly negatively portrayed. Instead, Soviet cinema prioritizes showcasing "good Soviets" over vilifying "bad Americans."
             </p>
 
             <!-- Persona comment -->
-            <div class="container my-4 px-0 ps-sm-3 pe-sm-5">
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
                 <div class="row g-3">
                     <div class="col-auto d-flex p-0 p-sm-1">
                         <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
@@ -765,7 +868,7 @@
                     <div class="col">
                         <div class="persona-text p-3 p-sm-4 border rounded shadow">
                             <p class="mb-0"><i>
-                                Alright, it’s obvious the characters are political vectors, embodying the values and ideologies of each side. But surely, they’re not just that… right? Maybe they also mirror trends in public opinion? 🤔 I guess I’m just hoping we can pull some more nuanced insights from these characters. 🥲
+                                Alright, it’s obvious the characters are political vectors, embodying the values and ideologies of each side. But surely, they’re not just that… right? Maybe they also mirror trends in public opinion? <span style="font-style:normal;">🤔</span> I guess I’m just hoping we can pull some more nuanced insights from these characters. <span style="font-style:normal;">🥲</span>
                             </i></p>
                         </div>
                     </div>
@@ -780,7 +883,7 @@
             </p>
 
             <!-- Plot: Changing themes across years-->
-            <iframe src="" width="100%" height="500px"></iframe>
+            <iframe src="graphs/theme_char_evol.html" width="100%" height="500px"></iframe>
 
             <p>
                 Viewed this way, it might seem a bit chaotic. HOWEVER, we can already observe some interesting trends. The lexicon of heroism almost always dominates the other categories. Almost? We'll come back to that ;). Additionally, we see a clear increase in the presence of lexicon related to politics and power throughout the Cold War, illustrating the significant presence of this theme in films from that era. So far, everything seems coherent, but let's delve deeper and observe this evolution for each major period of the Cold War.
@@ -818,115 +921,40 @@
                 </ul>
 
                 <!-- Single Level Content -->
-                <div class="tab-content" id="uniqueTabContent">
+                <div class="tab-content mb-5" id="uniqueTabContent">
                     <div class="tab-pane fade show active" id="unique-content1" role="tabpanel" aria-labelledby="unique-tab1">
-                        <h3 class="h5">Bloc Establishment</h3>
+                        <iframe src="graphs/theme_char_blocs_estab.html" width="100%" height="500px"></iframe>
                         <p>The rise in ideological tensions is reflected in the increased frequency of politics & power themes (from 0.25 to 0.35). The evolution of heroic themes (from 0.4 to 0.45) may reflect the construction of heroic figures tied to political ideals (for example, patriotic characters in Western films or exemplary workers in Soviet films). We also observe a clear increase in the representation of support & solidarity (from 0.14 to 0.21), which could be linked to calls for national unity and social cohesion in the context of world's bipolarisation.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content2" role="tabpanel" aria-labelledby="unique-tab2">
-                        <h3 class="h5">Major Crisis and Tensions</h3>
+                        <iframe src="graphs/theme_char_major_crises.html" width="100%" height="500px"></iframe>
                         <p>The heroic and politics & power categories remain high and relatively stable, with no notable change in trend. However, a clear increase in deception is visible in 1955, perhaps linked to political summits and negotiations such as the 1955 Geneva Conference, which was an attempt at détente but yielded no concrete results, leading to widespread disappointment. Additionally, a peak is observed in 1962, which occurs after the construction of the Berlin Wall in 1961 and coincides with the start of the Cuban Missile Crisis, a pivotal moment in the Cold War that also marked the beginning of the Détente.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content3" role="tabpanel" aria-labelledby="unique-tab3">
-                        <h3 class="h5">La Détente</h3>
-                        <p>The beginning of this period shows a slight increase (in 1965) in the theme of love & affection, perhaps indicating a desire for more positive human relationships after the world narrowly avoided catastrophe. Although heroism is present, there is a downward trend between 1969 and 1973, which coincides with a significant increase in politics-related topics. One possible explanation is the presence of American troops in Vietnam and the unprecedented media coverage of this conflict. These were challenging years for the American executive, marked by numerous scandals and a decrease in support from the American population. The rise in deception and the decline in pride also illustrate these facts. source</p>
+                        <iframe src="graphs/theme_char_detente.html" width="100%" height="500px"></iframe>
+                        <p>The beginning of this period shows a slight increase (in 1965) in the theme of love & affection, perhaps indicating a desire for more positive human relationships after the world narrowly avoided catastrophe. Although heroism is present, there is a downward trend between 1969 and 1973, which coincides with a significant increase in politics-related topics. One possible explanation is the presence of American troops in Vietnam and the unprecedented media coverage of this conflict. These were challenging years for the American executive, marked by numerous scandals and a decrease in support from the American population. The rise in deception and the decline in pride also illustrate these facts<a href="#source11"><sup>[11]</sup></a>.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content4" role="tabpanel" aria-labelledby="unique-tab4">
-                        <h3 class="h5">Second Cold War</h3>
+                        <iframe src="graphs/theme_char_2nd_cold_war.html" width="100%" height="500px"></iframe>
                         <p>Tensions resurface, heroism and politics remain constant, while solidarity, already scarce, decreases significantly. The term law appears slightly more frequently than in other periods, reflecting an effort to curb arms production and violence through treaties to prevent another crisis like the one in Cuba.</p>
                     </div>
                     <div class="tab-pane fade" id="unique-content5" role="tabpanel" aria-labelledby="unique-tab5">
-                        <h3 class="h5">End Of Cold War</h3>
+                        <iframe src="graphs/theme_char_end_war.html" width="100%" height="500px"></iframe>
                         <p>Starting in 1988, a notable decrease in politics & power is observed, reflecting the easing of tensions, particularly with the fall of the Berlin Wall in 1989. Their frequency drops to 0.27, after fluctuating around 0.35 throughout the conflict. In 1991, political themes are even surpassed by deception, which reaches its maximum frequency, while support & solidarity reach their lowest levels. This illustrates the profound impact of the conflict on populations and could indicate a loss of bearings at the end of these tumultuous years. The decline in support & solidarity also suggests a weakening of collective ideals, marking a transition towards more individualistic concerns.</p>
                     </div>
                 </div>
             </div>
             <!-- End of Single Level Tabs -->
 
-            
-            <!-- TABS NESTED -->
-            <div class="container mt-5 p-0">
-                <!-- First Level Pills -->
-                <ul class="nav nav-pills mb-1 justify-content-center first-level" id="firstLevelPills" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active nav-west" id="option1-pill" data-bs-toggle="pill" data-bs-target="#option1" type="button" role="tab" aria-controls="option1" aria-selected="true">
-                            Western
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link nav-east" id="option2-pill" data-bs-toggle="pill" data-bs-target="#option2" type="button" role="tab" aria-controls="option2" aria-selected="false">
-                            Eastern
-                        </button>
-                    </li>
-                </ul>
-              
-                <!-- First Level Content -->
-                <div class="tab-content" id="firstLevelContent">
-                    <!-- Content for Option 1 -->
-                    <div class="tab-pane fade show active" id="option1" role="tabpanel" aria-labelledby="option1-pill">                        
-                        <!-- Second Level Pills for Option 1 -->
-                        <ul class="nav nav-pills mb-3 justify-content-center second-level" id="option1SecondLevel" role="tablist">
-                        <li class="nav-item">
-                            <button class="nav-link active" id="opt1-sub1-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub1" type="button" role="tab" aria-controls="opt1-sub1" aria-selected="true">Sub-Option 1</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="opt1-sub2-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub2" type="button" role="tab" aria-controls="opt1-sub2" aria-selected="false">Sub-Option 2</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="opt1-sub3-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub3" type="button" role="tab" aria-controls="opt1-sub3" aria-selected="false">Sub-Option 3</button>
-                        </li>
-                        </ul>
-                
-                        <!-- Content for Second Level Pills in Option 1 -->
-                        <div class="tab-content">
-                        <div class="tab-pane fade show active" id="opt1-sub1" role="tabpanel" aria-labelledby="opt1-sub1-pill">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci orci, cursus id purus sit amet, varius feugiat urna. Sed vel rutrum lorem, sed accumsan lectus. Maecenas volutpat est nec ultrices malesuada. Integer facilisis luctus vulputate. Suspendisse pharetra at nulla ut varius. Nunc vehicula pulvinar sem nec sodales. Donec urna neque, vehicula pulvinar risus id, tincidunt aliquet magna. Donec non lacus neque. Quisque nisi velit, feugiat ac tellus ac, porta commodo quam. Sed a fermentum ligula. Donec feugiat metus quis porta vulputate. Aenean vel neque auctor, vestibulum lacus non, gravida nulla. Curabitur congue euismod erat vel varius. Vestibulum in laoreet nisi. In mattis felis eu purus rhoncus, in faucibus enim tempus. Etiam quis turpis magna. Fusce maximus diam erat, sed rhoncus nisl vehicula vitae. Aenean quis rutrum tortor, consectetur pulvinar nunc. Donec venenatis tincidunt est. Fusce mauris sapien, pretium a aliquam sit amet, suscipit id enim. Aenean a felis vel risus interdum interdum. Morbi faucibus iaculis elementum. Proin ante quam, aliquet sit amet quam nec, viverra ultricies odio. Aenean euismod velit posuere varius commodo. Mauris ornare tellus dui, ac mollis lorem elementum ut. Aenean venenatis velit commodo, luctus mauris in, blandit libero. In rutrum ornare sapien, id lacinia est. Duis elit nisl, lobortis sed tristique ac, dictum a diam. Aliquam convallis enim justo, et dignissim lacus consectetur tempor. Suspendisse felis massa, dapibus tempor erat in, tempor auctor velit. In hendrerit diam a dapibus posuere. Aenean purus tortor, pretium nec ex eu, tempor posuere dolor.</p>
-                        </div>
-                        <div class="tab-pane fade" id="opt1-sub2" role="tabpanel" aria-labelledby="opt1-sub2-pill">
-                            <p>Content for Option 1 - Sub-Option 2</p>
-                        </div>
-                        <div class="tab-pane fade" id="opt1-sub3" role="tabpanel" aria-labelledby="opt1-sub3-pill">
-                            <p>Content for Option 1 - Sub-Option 3</p>
-                        </div>
-                        </div>
-                    </div>
-                
-                    <!-- Content for Option 2 -->
-                    <div class="tab-pane fade" id="option2" role="tabpanel" aria-labelledby="option2-pill">                
-                        <!-- Second Level Pills for Option 2 -->
-                        <ul class="nav nav-pills mb-3 justify-content-center second-level" id="option2SecondLevel" role="tablist">
-                        <li class="nav-item">
-                            <button class="nav-link active" id="opt2-sub1-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub1" type="button" role="tab" aria-controls="opt2-sub1" aria-selected="true">Sub-Option 1</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="opt2-sub2-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub2" type="button" role="tab" aria-controls="opt2-sub2" aria-selected="false">Sub-Option 2</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="opt2-sub3-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub3" type="button" role="tab" aria-controls="opt2-sub3" aria-selected="false">Sub-Option 3</button>
-                        </li>
-                        </ul>
-                
-                        <!-- Content for Second Level Pills in Option 2 -->
-                        <div class="tab-content">
-                        <div class="tab-pane fade show active" id="opt2-sub1" role="tabpanel" aria-labelledby="opt2-sub1-pill">
-                            <p>Content for Option 2 - Sub-Option 1</p>
-                        </div>
-                        <div class="tab-pane fade" id="opt2-sub2" role="tabpanel" aria-labelledby="opt2-sub2-pill">
-                            <p>Content for Option 2 - Sub-Option 2</p>
-                        </div>
-                        <div class="tab-pane fade" id="opt2-sub3" role="tabpanel" aria-labelledby="opt2-sub3-pill">
-                            <p>Content for Option 2 - Sub-Option 3</p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <h2>What about you?</h2>
+            <p>
+                If you were a movie character, what kind of film would you star in? What ideology would you spread? Take our special quiz!
+            </p>    
             <div class="quiz-container">
                 <!-- Intro Slide -->
                 <div class="slide intro" id="intro">
                     <h2>What's <u>your</u> dirty secret?</h2>
-                    <p>Test your orientation. Which side are you?</p>
+                    <p>Find your place on the Iron Curtain's divide</p>
                     <button class="btn btn-primary" onclick="startQuiz()">Start</button>
                 </div>
             
@@ -964,6 +992,40 @@
             </div>
 
             <h1 id="section6">Let's sum up</h1>
+            <p>
+                The Cold War wasn’t just a political and military struggle; it unfolded through the world of cinema, where films became tools of ideological influence. Both the Western and Eastern blocs used movies to convey their values and shape public opinion. The USA and the USSR dominated global film production, with clear alliances reflected in the number of films produced by NATO countries and Warsaw Pact members. Western nations leaned into collaborations, reinforcing cultural ties, while the USSR focused on controlling narratives to maintain ideological purity.
+            </p>
+            <p>
+                The stories crafted during this era reveal how deeply cinema was embedded in the ideological conflict. Western films often promoted capitalist ideals through genres like action, thrillers, and crime, while Eastern films favored documentaries and historical dramas to highlight themes of struggle, oppression, and community values. War films surged during periods of heightened tensions, with Western productions delivering their messages through entertainment and satire, while Eastern cinema took a more direct and somber approach.
+            </p>
+            <p>
+                Characters played a crucial role as vectors of these ideologies. Western heroes often embodied individualism, freedom, and justice, while Eastern characters emphasized sacrifice, loyalty, and collective strength. Western films frequently depicted Eastern villains, reinforcing the ideological divide, whereas Soviet films prioritized showcasing their own heroes over vilifying the West.
+            </p>
+            <p>
+                These trends shifted in line with the broader Cold War timeline. During periods of détente, there was a rise in romance and social dramas, reflecting a temporary easing of global tensions. When crises flared, war and spy dramas dominated, mirroring the conflict's intensity. As the Cold War ended, themes of deception and disillusionment emerged, capturing the uncertainty and changing sentiments of the time.
+            </p>
+            <p>
+                Ultimately, the data reveals that cinema was a subtle yet powerful arena of ideological combat. Movies reflected the global power struggle, reinforced alliances, and influenced public opinion, proving that the silver screen was far more than a place for simple entertainment during the Cold War.
+            </p>
+            
+            <!-- Persona comment -->
+            <div class="container my-5 px-0 ps-sm-3 pe-sm-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex p-0 p-sm-1">
+                        <div class="d-flex align-items-start align-items-sm-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="persona-text p-3 p-sm-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Well, dear reader, that’s the end of this thrilling reel! <span style="font-style:normal;">🎬</span> I hope you enjoyed this journey through the hidden side of Cold War cinema. Now you’ve got some serious movie secrets to impress your friends with. Catch you in the next story—stay curious and keep questioning! <span style="font-style:normal;">😎🍿</span>
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
 
             <!-- End of main elements -->
         </div>
@@ -984,17 +1046,33 @@
 
     <div class="container-fluid w-100 footer">
         <div class="row justify-content-center my-5 mx-0">
-            <div class="content col-10 col-lg-8 col-xl-6">
+            <div class="content col-11 col-lg-8 col-xl-6">
                 <p>This project was carried out as part of the ADA-2024 course at EPFL.</p>
                 <p><b>DatAmigos Team</b> starring Mattéo Berthet, Mehdi Bouguerra Ezzina, Karim Derbel, Fanny Lasne and Martin Rollet.</p>
                 <p class="mb-5">
                     <a href="https://github.com/epfl-ada/ada-2024-project-datamigos">
-                        <img src="https://img.shields.io/github/stars/epfl-ada/ada-2024-project-datamigos?style=social" alt="GitHub stars">
+                        <img src="https://img.shields.io/github/stars/epfl-ada/ada-2024-project-datamigos" alt="GitHub stars">
                     </a>
                 </p>
                 
-                <p id="source1"><sup>[10]</sup><a href="">Smith, J. Cold War Cinema: Politics on Screen. 2020. Smith, J. Cold War Cinema: Politics on Screen. 2020. Smith, J. Cold War Cinema: Politics on Screen. 2020. Smith, J. Cold War Cinema: Politics on Screen. 2020.</a></p>
-                <p id="source2">Doe, M. Film and Political Tensions. 2018.</p>
+                <p id="source1"><sup>[1] </sup><a href="https://www.cs.cmu.edu/~ark/personas/">CMU Movie Summary Corpus</a></p>
+                <p id="source2"><sup>[2] </sup><a href="https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset">The Movies Dataset (from TMDB and GroupLens)</a></p>
+                <p id="source3"><sup>[3] </sup><a href="https://developer.imdb.com/non-commercial-datasets/">IMDb Non-Commercial Datasets</a></p>
+                <p id="source4"><sup>[4] </sup><a href="https://zonecampus.ca/un-peu-dhistoire-le-cinema-americain-en-temps-de-guerre/">G.&nbsp;Senneville, "Un peu d’histoire: Le cinéma américain en temps de guerre", Zone Campus. Accessed: Dec. 20, 2024.
+                </a></p>
+                <p id="source5"><sup>[5] </sup><a href="https://fr.wikipedia.org/wiki/Guerre_froide">"Guerre froide", Wikipédia. Dec. 11, 2024. Accessed: Dec. 20, 2024.
+                </a></p>
+                <p id="source6"><sup>[6] </sup><a href="https://www.statista.com/statistics/1249401/movie-theater-attendance-us-ussr-cold-war/">"Movie theater attendance in the U.S. and USSR 1970-1988", Statista. Accessed: Dec. 20, 2024.
+                </a></p>
+                <p id="source7"><sup>[7] </sup><a href="https://www.cvce.eu/education/unit-content/-/unit/55c09dcc-a9f2-45e9-b240-eaef64452cae/aeef1b65-8332-4c9c-9819-1d21617d8a8d">"La course aux armements et la "guerre des Étoiles" - La guerre froide (1945-1989)", CVCE.EU by UNI.LU. Accessed: Dec. 20, 2024.
+                </a></p>
+                <p id="source8"><sup>[8] </sup><a href="https://fr.wikipedia.org/w/index.php?title=Chronologie_de_la_guerre_froide&oldid=212436891">"Chronologie de la guerre froide", Wikipédia. Feb. 13, 2024. Accessed: Dec. 20, 2024.
+                </a></p>
+                <p id="source9"><sup>[9] </sup><a href="https://www.revueconflits.com/cinema-et-propagande-la-guerre-froide/">A.&nbsp;Bogé, "Cinéma et propagande : la guerre froide", Conflits : Revue de Géopolitique. Accessed: Dec. 20, 2024.
+                </a></p>
+                <p id="source10"><sup>[10] </sup>A.&nbsp;A.&nbsp;Tarkovskij and J.&nbsp;Gianvito, Andrei Tarkovsky: interviews. in Conversations with filmmakers series. Jackson, Miss: University Press of Mississippi, 2006.</p>
+                <p id="source11"><sup>[11] </sup><a href="https://www.bbc.com/afrique/articles/c9r0e0dzd4ko">"Guerre du Viêt Nam : Pourquoi les États-Unis ont-ils perdu le conflit malgré une supériorité militaire écrasante ? - BBC News Afrique". Accessed: Dec. 20, 2024.
+                </a></p>
                 <p><a href="https://www.flaticon.com/free-animated-icons/film-roll">Film roll animated icons created by Freepik - Flaticon</a></p>
             </div>
         </div>

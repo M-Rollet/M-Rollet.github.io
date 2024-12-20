@@ -38,7 +38,7 @@ body {
 
 h1 {
     font-family: "Limelight", serif;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 a {
@@ -91,4 +91,9 @@ a:hover {
     .persona-text {
         font-size: .9em;
     }
+}
+
+::selection {
+    background-color: var(--scale-7);
+    color: white; /* Optional: to ensure the text is readable */
 }
