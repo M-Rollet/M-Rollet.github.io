@@ -1,14 +1,22 @@
 .custom-scrollbar {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: auto; /* Increased width to accommodate labels */
-    height: 230px; /* Same height as requested */
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.5s ease; /* Smooth fade-in transition */
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: auto; /* Increased width to accommodate labels */
+  height: 230px; /* Same height as requested */
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Smooth fade-in transition */
+}
+
+@media (max-width: 992px) {
+  .custom-scrollbar {
+    bottom: 25px;
+    right: 15px;
   }
+  
+}
 
 .custom-scrollbar.visible {
     opacity: 1; /* Fully visible state */
@@ -52,6 +60,17 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  @media (max-width: 992px) {
+    .section-labels {
+      display: none;
+    }
+    .section-labels.visible {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
   
   .section-label {
     font-size: 0.9rem;
@@ -63,6 +82,14 @@
     border-radius: 5px;
     transition: font-weight 0.2s, background-color 0.2s;
     line-height: 120%;
+  }
+
+  @media (max-width: 992px) {
+    .section-label {
+      background-color: var(--neutral-4);
+      padding: 5px; /* Optional padding for better appearance */
+      border-radius: 5px; /* Optional rounded corners */
+    }
   }
   
   .section-label:hover {

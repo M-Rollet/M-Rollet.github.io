@@ -31,17 +31,19 @@
 #cardGroup1 .card-footer {
     background-color: var(--scale-2);
     color: white;
+    font-weight: bold;
 }
 
 #cardGroup1 .card {
-    border-color: var(--scale-2);
+    border-color: var(--scale-3);
 }
 
 #cardGroup2 .card-footer {
     background-color: var(--scale-6);
     color: white;
+    font-weight: bold;
 }
 
 #cardGroup2 .card {
-    border-color: var(--scale-6);
+    border-color: var(--scale-5);
 }

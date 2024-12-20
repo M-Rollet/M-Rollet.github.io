@@ -31,5 +31,27 @@ function updateScrollProgress() {
   });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollBar = document.querySelector('.custom-scrollbar');
+  const sectionLabels = document.querySelector('.section-labels');
+
+  // Toggle visibility on scroll bar click
+  scrollBar.addEventListener('click', (event) => {
+    if (window.innerWidth <= 992) {
+      sectionLabels.classList.toggle('visible');
+      event.stopPropagation(); // Prevent immediate hiding
+    }
+  });
+
+  // Hide the links when clicking anywhere on the document
+  document.addEventListener('click', () => {
+    if (window.innerWidth <= 992) {
+      sectionLabels.classList.remove('visible');
+    }
+  });
+});
+
+
+
 window.addEventListener('scroll', updateScrollProgress);
 window.addEventListener('load', updateScrollProgress);
