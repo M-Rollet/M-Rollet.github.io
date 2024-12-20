@@ -1,0 +1,26 @@
+/* First-Level Pills */
+.first-level .nav-link {
+    color: var(--neutral-1);
+}
+
+.first-level .nav-link.nav-west.active {
+    background-color: var(--scale-2);
+    color: white;
+}
+
+.first-level .nav-link.nav-east.active {
+    background-color: var(--scale-6);
+    color: white;
+}
+
+/* Second-Level Pills */
+.second-level .nav-link {
+    color: var(--neutral-2);
+    font-size: 0.875rem;       /* Smaller Font Size */
+    padding: 0.25rem 0.5rem;   /* Smaller Padding */
+  }
+
+.second-level .nav-link.active {
+    background-color: var(--neutral-3);
+    color: var(--neutral-4);
+}

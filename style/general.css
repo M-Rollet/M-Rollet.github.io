@@ -1,0 +1,82 @@
+/* West-to-East Gradient Scale (Blue to Red) */
+:root {
+    --scale-1: #1C5EA9;       /* Deep Blue - West Side */
+    --scale-2: #5C8DB8;       /* Blue */
+    --scale-3: #A0CBE8;       /* Light Blue */
+    --scale-4: #D5D5D5;       /* Neutral Middle */
+    --scale-5: #FEB3A6;       /* Light Red */
+    --scale-6: #F7514B;       /* Red */
+    --scale-7: #BD0032;       /* Deep Red - East Side */
+}
+
+/* Neutral Colors */
+:root {
+    --neutral-1: #000010;     /* Darkest Neutral */
+    --neutral-2: #59585B;     /* Dark Neutral */
+    --neutral-3: #BBB9B9;     /* Light Neutral */
+    --neutral-4: #F6F6F6;     /* Lightest Neutral */
+}
+
+/* Utility Colors */
+:root {
+    --utility-1: #1F6B5D;     /* Dark Green Utility */
+    --utility-2: #4BAE9A;     /* Green Utility */
+    --utility-3: #06DD95;     /* Bright Green Utility */
+    --utility-4: #7FB112;     /* Dark Yellow Utility */
+    --utility-5: #98E144;     /* Yellow-Green Utility */
+    --utility-6: #F0FE41;     /* Bright Yellow Utility */
+    --utility-7: #FFE989;     /* Light Yellow Utility */
+    --utility-8: #FAC82B;     /* Yellow Utility */
+    --utility-9: #F58634;     /* Orange Utility */
+    --utility-10: #F1AB79;    /* Light Orange Utility */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Limelight", serif;
+    margin-top: 1em;
+}
+
+a {
+    color: var(--distinct-1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.limelight-regular {
+    font-family: "Limelight", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.banner {
+    background-image: url('../img/title.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
+    height: 500px;
+    background-size: cover;
+    background-position: center;"
+}
+
+.footer {
+    background-color: var(--neutral-4);
+    color: var(--neutral-2);
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.footer p {
+    margin-bottom: 6px;
+    text-indent: -20px;
+}
+
+.persona {
+    width: 50px;
+}

@@ -1,12 +1,537 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Hello World</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADA - Dirty Movie Secrets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/quiz.css">
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/scroll.css">
+    <link rel="stylesheet" href="style/maps.css">
+    <link rel="stylesheet" href="style/cards.css">
+    <link rel="stylesheet" href="style/tabs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Limelight&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+  <body>
+    <div class="d-flex justify-content-between p-3 position-absolute w-100" style="z-index: 10; color: var(--neutral-4); text-shadow: 0 0 5px var(--neutral-2);">
+        <div class="text-left mx-sm-2">
+            <small>ADA 2024</small>
+        </div>
+        <div class="text-right mx-sm-2">
+            <small>DatAmigos</small>
+        </div>
+    </div>
 
-<h1>Hello World</h1>
-<p>This is a paragraph.</p>
+    <div class="d-none d-lg-block bg-image position-relative w-100 banner">
+        <div class="overlay-text position-absolute top-50 start-50 translate-middle text-white text-center limelight-regular w-100">
+            <h2 class="display-5">The Iron Curtain's</h2>
+            <h1 class="display-2 mt-0">Dirty Movie Secrets</h1>
+        </div>
+    </div>
+      
+    <div class="d-lg-none d-sm-block d-none bg-image position-relative banner">
+        <div class="overlay-text position-absolute top-50 start-50 translate-middle text-white text-center limelight-regular w-100">
+            <h2 class="">The Iron Curtain's</h2>
+            <h1 class="display-3 mt-0">Dirty Movie Secrets</h1>
+        </div>
+    </div>
+      
+    <div class="d-sm-none bg-image position-relative banner">
+        <div class="overlay-text position-absolute top-50 start-50 translate-middle text-white text-center limelight-regular w-100">
+            <h2 class="">The Iron Curtain's</h2>
+            <h1 class="display-3 mt-0">Dirty Movie Secrets</h1>
+        </div>
+    </div>
+      
+    <div class="row justify-content-center my-5 mx-0">
+        <div class="col-10 col-lg-8 col-xl-6">
+            
+            <!-- Persona comment -->
+            <div class="container my-4 ps-3 pe-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex">
+                        <div class="d-flex align-items-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Hey there, dear reader! Buckle up because Datamigos are about to reveal the little secrets hidden behind cinema during the Cold War, and trust me, it's not pretty. Now, maybe this won't affect you much if you weren't born at that time, but think about your parents and grandparents. Anyway, let's dive in and hold on tight because this is serious stuff…
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
 
-</body>
+            <h1 id="section1">Introduction</h1>
+            <h2>What are these secrets about?</h2>
+            <p>
+                During the Cold War, both the Western and Eastern blocs relied on soft power to spread ideological messages and influence global opinion, with cinema emerging as a key medium for this influence. This story explores how cinema served as a subtle but potent tool for political messaging during this period. In particular, how cinema can not only entertain but also embed ideologies, shape public views, and reflect the values and power dynamics of its time. To unveil these secrets, three main angles were explored:
+                <ul>
+                    <li>How international power dynamics and influence are reflected in film production.</li>
+                    <li>How the themes and narratives of films were crafted to convey and promote specific ideologies.</li>
+                    <li>How film characters were used, either as tools to manipulate populations or as mirrors of society.</li>
+                </ul> 
+            </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 ps-3 pe-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex">
+                        <div class="d-flex align-items-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Interesting, eh? I told you so 😎. You've been lied to, but don't panic - Datamigos are here to set the record straight.
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+              
+                        
+            <h2>Let's get our hands dirty!</h1>
+            <p>The first step was to build a suitable dataset for this ambitious project.
+                It's important to note that the original dataset was quite "America-centric,"
+                which was a bit problematic for our study. To address this, we extended it with other datasets
+                (source link) to achieve a more balanced representation, with more movies coming from other countries
+                like Russia or Soviet Union. </p>
+            
+            <h2>A first glance at the data</h2>
+            <p>After data augmentation and pre-processing, we ended up with a dataset containing 25621 films
+                released between 1945 and 1995, of which 2919 are classified as Eastern side and 3142 as Western side.
+                The map below – which you can explore – shows the number of movies released by countries.</p>
+            
+            <p class="text-center mb-1">Number of Films per country</p>
+            <div id="map2" class="map-container"></div>
+
+            <p>The United States and Russia stand out as the main film producers during this period,
+                with 8239 and 10853 films respectively. This clearly illustrates their global dominance and Soft Power.
+                There are also a large number of films from European countries such as France, United Kingdom, Italy and Germany.
+                These countries play a relevant role in our study and could prove essential in the analysis of
+                international collaboration in the film industry.
+            </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 ps-3 pe-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex">
+                        <div class="d-flex align-items-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                It's interesting what they're sharing with us here! I'm sure they have plenty more to show us.
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
+            <p>We also examined the distribution of films over year throughout the Cold War to identify
+                trends that could provide insights for our analysis.
+            </p>
+
+            <!-- Plot: Nb of movies per year-->
+            <iframe src="" width="100%" height="500px"></iframe>
+
+            <p>Throughout the Cold War, the number of films produced rose steadily.
+                This suggests that cinema played an increasingly important role in the ideological conflict.
+            </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 ps-3 pe-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex">
+                        <div class="d-flex align-items-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                And considering how the number of films dropped after 1991, it’s clear that cinema was used for other purposes than just entertainment during the Cold War 🧐.
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
+            <p>Ce sont les résultats que nous avons obtenus pour l’ensemble des films de notre dataset.
+                Maintenant, si on se penche uniquement sur les films qui montrent un penchant clair pour
+                un des Blocs on observe la répartition suivante.
+            </p>
+
+            <!-- Plot: Evolution of nb of movies per side per year-->
+            <iframe src="" width="100%" height="500px"></iframe>
+
+            <p>
+                From the beginning of the Cold War, the Western Bloc (United States and its allies) quickly seemed
+                to take the lead in film production, or at least, the number of films classified as Western dominated.
+                This was likely aimed at asserting its cultural and ideological power in response to rising tensions.
+                The production of western oriented films can be seen as a strategy to promote capitalist and democratic
+                ideals, not only to its own audience but also to influence allies – ensuring they did not switch sides –
+                and neutral countries.
+            </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 ps-3 pe-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex">
+                        <div class="d-flex align-items-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Oh, about that! I came across an article (source: https://zonecampus.ca/un-peu-dhistoire-le-cinema-americain-en-temps-de-guerre/)
+                                that mentioned how the USA had already started using cinema during World War II to promote the American democratic way of life. Maybe they were more prepared than the USSR and already knew how to use cinema to their advantage.
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
+            <p>
+                Between 1952 and 1959, the number of films representing Eastern values increased significantly,
+                even surpassing those representing the West. This sudden rise seems to be a reaction from the
+                USSR and its partisans, seeking to promote their communist ideals and counter the Western cultural influence.
+                The number of Eastern-oriented films surpassed that of Western-oriented films until 1984.
+                Subsequently, fluctuations were observed, followed by a sharp decline in 1989.
+                This decline also affected Western films and coincided with the fall of the Berlin Wall.
+                As tensions eased, films no longer needed to embody bloc-specific values as much as they did during the conflit.
+            </p>
+
+            <!-- Persona comment -->
+            <div class="container my-4 ps-3 pe-5">
+                <div class="row g-3">
+                    <div class="col-auto d-flex">
+                        <div class="d-flex align-items-end" style="height: 100%;">
+                            <img src="img/persona.gif" alt="" class="persona img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 border rounded shadow">
+                            <p class="mb-0"><i>
+                                Well, talk about a plot twist! 🎥 From Western dominance to an Eastern comeback, it’s like a cinematic war for hearts and minds. And we're just scratching the surface with these global trends. Just imagine what Datamigos has lined up next! 😏 I won't spoil it for you — go read on, so that we can chat about it!
+                            </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of comment -->
+
+            <h2>The reflection of international dynamics and influences in film production</h2>
+
+            <h1>Themes & Genres</h1>
+
+            <h2>Subheading</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci orci, cursus id purus sit amet, varius feugiat urna. Sed vel rutrum lorem, sed accumsan lectus. Maecenas volutpat est nec ultrices malesuada. Integer facilisis luctus vulputate. Suspendisse pharetra at nulla ut varius. Nunc vehicula pulvinar sem nec sodales. Donec urna neque, vehicula pulvinar risus id, tincidunt aliquet magna. Donec non lacus neque. Quisque nisi velit, feugiat ac tellus ac, porta commodo quam. Sed a fermentum ligula.
+
+                Donec feugiat metus quis porta vulputate. Aenean vel neque auctor, vestibulum lacus non, gravida nulla. Curabitur congue euismod erat vel varius. Vestibulum in laoreet nisi. In mattis felis eu purus rhoncus, in faucibus enim tempus. Etiam quis turpis magna. Fusce maximus diam erat, sed rhoncus nisl vehicula vitae. Aenean quis rutrum tortor, consectetur pulvinar nunc. Donec venenatis tincidunt est. Fusce mauris sapien, pretium a aliquam sit amet, suscipit id enim. Aenean a felis vel risus interdum interdum. Morbi faucibus iaculis elementum. Proin ante quam, aliquet sit amet quam nec, viverra ultricies odio. Aenean euismod velit posuere varius commodo.
+                
+                Mauris ornare tellus dui, ac mollis lorem elementum ut. Aenean venenatis velit commodo, luctus mauris in, blandit libero. In rutrum ornare sapien, id lacinia est. Duis elit nisl, lobortis sed tristique ac, dictum a diam. Aliquam convallis enim justo, et dignissim lacus consectetur tempor. Suspendisse felis massa, dapibus tempor erat in, tempor auctor velit. In hendrerit diam a dapibus posuere. Aenean purus tortor, pretium nec ex eu, tempor posuere dolor.
+            </p>
+            <h3>Map 1: Ratio of East- vs. West-Oriented Films</h3>
+            <div id="map1" class="map-container"></div>
+
+            <div class="container my-5 p-0">
+                <!-- First Level Pills -->
+                <ul class="nav nav-pills mb-1 justify-content-center first-level" id="firstLevelPills" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active nav-west" id="option1-pill" data-bs-toggle="pill" data-bs-target="#cardGroup1" type="button" role="tab" aria-controls="option1" aria-selected="true">
+                            Western
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link nav-east" id="option2-pill" data-bs-toggle="pill" data-bs-target="#cardGroup2" type="button" role="tab" aria-controls="option2" aria-selected="false">
+                            Eastern
+                        </button>
+                    </li>
+                </ul>
+              
+                <!-- First Level Content -->
+                <div class="tab-content py-2" id="firstLevelContent">
+                    <!-- Content for Option 1 -->
+                    <!-- Card Group 1 -->
+                    <div class="tab-pane fade show active" id="cardGroup1" role="tabpanel">
+                        <div class="card-group">
+                            <div class="card">
+                                <img src="img/ryan.jpg" class="card-img-top" title="Captain John H. Miller, Saving Private Ryan (1998)" alt="Captain John H. Miller, Saving Private Ryan (1998)">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Heroic Leader</h5>
+                                    <p class="card-text">This character is a leader who inspires others through their bravery and deep sense of duty. They frequently make significant sacrifices for the greater good, demonstrating courage and honor in their actions. Driven by ambition and a profound desire to serve, they often embody the role of a soldier, always ready to stand on the front lines for their beliefs and their people.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>bravery, leadership, duty, sense of sacrifice, courage, honor</small>
+                                </div>
+                            </div>
+                        
+                            <div class="card">
+                                <img src="img/dirtyharry.jpg" class="card-img-top" title="Inspector Harry Callahan, Dirty Harry (1971)" alt="Inspector Harry Callahan, Dirty Harry (1971)">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Moral Enforcer</h5>
+                                    <p class="card-text">This character is driven by a strong sense of justice and a commitment to upholding the law. Their actions are guided by a deep sense of integrity and a desire to enforce order and truth, even if it means bending the rules. As a result, they may sometimes embody the role of an antihero.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>sense of justice, integrity, antihero tendencies, protector</small>
+                                </div>
+                            </div>
+                        
+                            <div class="card">
+                                <img src="img/taxidriver.jpg" class="card-img-top" title="Travis Bickle, Taxi Driver (1976)" alt="Travis Bickle, Taxi Driver (1976)">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Individualistic Rebel</h5>
+                                    <p class="card-text">This character is defined by a strong sense of individualism and a desire for freedom. They are loyal to their convictions and determined to achieve their goals, showing resilience in the face of adversity. They are often ordinary characters, everyman, which makes them sympathetic and endearing.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>individualism, seek for freedom, resilience, determination, everyman, rebel</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Content for Option 2 -->
+                    <!-- Card Group 2 -->
+                    <div class="tab-pane fade" id="cardGroup2" role="tabpanel">
+                        <div class="card-group">
+                            <div class="card">
+                                <img src="img/winston.jpg" class="card-img-top" alt="Winston Smith, 1984 (1984)" title="Winston Smith, 1984 (1984)">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Tragic Hero</h5>
+                                    <p class="card-text">This character is defined by a willingness, or at least an ability, to make sacrifices for the greater good. They are brave and determined, often resisting oppression and fighting for freedom. Their journey is frequently marked by tragedy, as they face immense challenges and make difficult choices.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>loyalty, sacrifice, bravery, determination, rebellion</small>
+                                </div>
+                            </div>
+                        
+                            <div class="card">
+                                <img src="img/handofsteel.jpg" class="card-img-top" alt="Cyborg, Hands of Steel (1986)" title="Cyborg, Hands of Steel (1986)">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Community Defender</h5>
+                                    <p class="card-text">This character is deeply attached to their community and places a high value on justice and love. This archetype often faces struggles and conflicts but remains resilient, fighting for their community. They embody a balance between individualism and collectivism, prioritizing family and community values, which makes them endearing and human.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>resilience, love, family, justice, collectivism, community</small>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="img/karpov.jpeg" class="card-img-top" alt="Karpov, Le Magnifique (1973)" title="Karpov, Le Magnifique (1973)">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Authoritarian Villain</h5>
+                                    <p class="card-text">The perfect incarnation of a villain consumed by power, greed, and a desire for control. This character (or entity) manipulates and oppresses others, embodying the darkest aspects of authority. They thrive on the suffering of others, suppressing resistance while presenting themselves as a necessary element for maintaining order.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>authoritarian, manipulative, power-hungry, ambitious, corrupted, eager to control</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci orci, cursus id purus sit amet, varius feugiat urna. Sed vel rutrum lorem, sed accumsan lectus. Maecenas volutpat est nec ultrices malesuada. Integer facilisis luctus vulputate. Suspendisse pharetra at nulla ut varius. Nunc vehicula pulvinar sem nec sodales. Donec urna neque, vehicula pulvinar risus id, tincidunt aliquet magna. Donec non lacus neque. Quisque nisi velit, feugiat ac tellus ac, porta commodo quam. Sed a fermentum ligula.
+
+                Donec feugiat metus quis porta vulputate. Aenean vel neque auctor, vestibulum lacus non, gravida nulla. Curabitur congue euismod erat vel varius. Vestibulum in laoreet nisi. In mattis felis eu purus rhoncus, in faucibus enim tempus. Etiam quis turpis magna. Fusce maximus diam erat, sed rhoncus nisl vehicula vitae. Aenean quis rutrum tortor, consectetur pulvinar nunc. Donec venenatis tincidunt est. Fusce mauris sapien, pretium a aliquam sit amet, suscipit id enim. Aenean a felis vel risus interdum interdum. Morbi faucibus iaculis elementum. Proin ante quam, aliquet sit amet quam nec, viverra ultricies odio. Aenean euismod velit posuere varius commodo.
+                
+                Mauris ornare tellus dui, ac mollis lorem elementum ut. Aenean venenatis velit commodo, luctus mauris in, blandit libero. In rutrum ornare sapien, id lacinia est. Duis elit nisl, lobortis sed tristique ac, dictum a diam. Aliquam convallis enim justo, et dignissim lacus consectetur tempor. Suspendisse felis massa, dapibus tempor erat in, tempor auctor velit. In hendrerit diam a dapibus posuere. Aenean purus tortor, pretium nec ex eu, tempor posuere dolor.
+            </p>
+            <!-- TABS NESTED -->
+            <div class="container mt-5 p-0">
+                <!-- First Level Pills -->
+                <ul class="nav nav-pills mb-1 justify-content-center first-level" id="firstLevelPills" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active nav-west" id="option1-pill" data-bs-toggle="pill" data-bs-target="#option1" type="button" role="tab" aria-controls="option1" aria-selected="true">
+                            Western
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link nav-east" id="option2-pill" data-bs-toggle="pill" data-bs-target="#option2" type="button" role="tab" aria-controls="option2" aria-selected="false">
+                            Eastern
+                        </button>
+                    </li>
+                </ul>
+              
+                <!-- First Level Content -->
+                <div class="tab-content" id="firstLevelContent">
+                    <!-- Content for Option 1 -->
+                    <div class="tab-pane fade show active" id="option1" role="tabpanel" aria-labelledby="option1-pill">                        
+                        <!-- Second Level Pills for Option 1 -->
+                        <ul class="nav nav-pills mb-3 justify-content-center second-level" id="option1SecondLevel" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="opt1-sub1-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub1" type="button" role="tab" aria-controls="opt1-sub1" aria-selected="true">Sub-Option 1</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt1-sub2-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub2" type="button" role="tab" aria-controls="opt1-sub2" aria-selected="false">Sub-Option 2</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt1-sub3-pill" data-bs-toggle="pill" data-bs-target="#opt1-sub3" type="button" role="tab" aria-controls="opt1-sub3" aria-selected="false">Sub-Option 3</button>
+                        </li>
+                        </ul>
+                
+                        <!-- Content for Second Level Pills in Option 1 -->
+                        <div class="tab-content">
+                        <div class="tab-pane fade show active" id="opt1-sub1" role="tabpanel" aria-labelledby="opt1-sub1-pill">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci orci, cursus id purus sit amet, varius feugiat urna. Sed vel rutrum lorem, sed accumsan lectus. Maecenas volutpat est nec ultrices malesuada. Integer facilisis luctus vulputate. Suspendisse pharetra at nulla ut varius. Nunc vehicula pulvinar sem nec sodales. Donec urna neque, vehicula pulvinar risus id, tincidunt aliquet magna. Donec non lacus neque. Quisque nisi velit, feugiat ac tellus ac, porta commodo quam. Sed a fermentum ligula. Donec feugiat metus quis porta vulputate. Aenean vel neque auctor, vestibulum lacus non, gravida nulla. Curabitur congue euismod erat vel varius. Vestibulum in laoreet nisi. In mattis felis eu purus rhoncus, in faucibus enim tempus. Etiam quis turpis magna. Fusce maximus diam erat, sed rhoncus nisl vehicula vitae. Aenean quis rutrum tortor, consectetur pulvinar nunc. Donec venenatis tincidunt est. Fusce mauris sapien, pretium a aliquam sit amet, suscipit id enim. Aenean a felis vel risus interdum interdum. Morbi faucibus iaculis elementum. Proin ante quam, aliquet sit amet quam nec, viverra ultricies odio. Aenean euismod velit posuere varius commodo. Mauris ornare tellus dui, ac mollis lorem elementum ut. Aenean venenatis velit commodo, luctus mauris in, blandit libero. In rutrum ornare sapien, id lacinia est. Duis elit nisl, lobortis sed tristique ac, dictum a diam. Aliquam convallis enim justo, et dignissim lacus consectetur tempor. Suspendisse felis massa, dapibus tempor erat in, tempor auctor velit. In hendrerit diam a dapibus posuere. Aenean purus tortor, pretium nec ex eu, tempor posuere dolor.</p>
+                        </div>
+                        <div class="tab-pane fade" id="opt1-sub2" role="tabpanel" aria-labelledby="opt1-sub2-pill">
+                            <p>Content for Option 1 - Sub-Option 2</p>
+                        </div>
+                        <div class="tab-pane fade" id="opt1-sub3" role="tabpanel" aria-labelledby="opt1-sub3-pill">
+                            <p>Content for Option 1 - Sub-Option 3</p>
+                        </div>
+                        </div>
+                    </div>
+                
+                    <!-- Content for Option 2 -->
+                    <div class="tab-pane fade" id="option2" role="tabpanel" aria-labelledby="option2-pill">                
+                        <!-- Second Level Pills for Option 2 -->
+                        <ul class="nav nav-pills mb-3 justify-content-center second-level" id="option2SecondLevel" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="opt2-sub1-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub1" type="button" role="tab" aria-controls="opt2-sub1" aria-selected="true">Sub-Option 1</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt2-sub2-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub2" type="button" role="tab" aria-controls="opt2-sub2" aria-selected="false">Sub-Option 2</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="opt2-sub3-pill" data-bs-toggle="pill" data-bs-target="#opt2-sub3" type="button" role="tab" aria-controls="opt2-sub3" aria-selected="false">Sub-Option 3</button>
+                        </li>
+                        </ul>
+                
+                        <!-- Content for Second Level Pills in Option 2 -->
+                        <div class="tab-content">
+                        <div class="tab-pane fade show active" id="opt2-sub1" role="tabpanel" aria-labelledby="opt2-sub1-pill">
+                            <p>Content for Option 2 - Sub-Option 1</p>
+                        </div>
+                        <div class="tab-pane fade" id="opt2-sub2" role="tabpanel" aria-labelledby="opt2-sub2-pill">
+                            <p>Content for Option 2 - Sub-Option 2</p>
+                        </div>
+                        <div class="tab-pane fade" id="opt2-sub3" role="tabpanel" aria-labelledby="opt2-sub3-pill">
+                            <p>Content for Option 2 - Sub-Option 3</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 id="section2">Section 1</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci orci, cursus id purus sit amet, varius feugiat urna. Sed vel rutrum lorem, sed accumsan lectus. Maecenas volutpat est nec ultrices malesuada. Integer facilisis luctus vulputate. Suspendisse pharetra at nulla ut varius. Nunc vehicula pulvinar sem nec sodales. Donec urna neque, vehicula pulvinar risus id, tincidunt aliquet magna. Donec non lacus neque. Quisque nisi velit, feugiat ac tellus ac, porta commodo quam. Sed a fermentum ligula.
+                Mauris ornare tellus dui, ac mollis lorem elementum ut. Aenean venenatis velit commodo, luctus mauris in, blandit libero. In rutrum ornare sapien, id lacinia est. Duis elit nisl, lobortis sed tristique ac, dictum a diam. Aliquam convallis enim justo, et dignissim lacus consectetur tempor. Suspendisse felis massa, dapibus tempor erat in, tempor auctor velit. In hendrerit diam a dapibus posuere. Aenean purus tortor, pretium nec ex eu, tempor posuere dolor.
+            </p>
+            <iframe src="graphs/test.html" width="100%" height="500px"></iframe>
+            <p>
+                Donec feugiat metus quis porta vulputate. Aenean vel neque auctor, vestibulum lacus non, gravida nulla. Curabitur congue euismod erat vel varius. Vestibulum in laoreet nisi. In mattis felis eu purus rhoncus, in faucibus enim tempus. Etiam quis turpis magna. Fusce maximus diam erat, sed rhoncus nisl vehicula vitae. Aenean quis rutrum tortor, consectetur pulvinar nunc. Donec venenatis tincidunt est. Fusce mauris sapien, pretium a aliquam sit amet, suscipit id enim. Aenean a felis vel risus interdum interdum. Morbi faucibus iaculis elementum. Proin ante quam, aliquet sit amet quam nec, viverra ultricies odio. Aenean euismod velit posuere varius commodo.
+            </p>
+            <h1 id="section3">Section 2</h1>
+            <p>Content for Section 2...</p>
+
+            <h1 id="section4">Section 3</h1>
+            <p>Content for Section 3...</p>
+
+            <h1 id="section5">Section 4</h1>
+            <p>Content for Section 4...</p>
+
+            <h1 id="section6">Section 5</h1>
+            <p>Content for Section 5...</p>
+
+            <h1 id="section7">Section 6</h1>
+            <p>Content for Section 6...</p>
+
+            <h1 id="section8">Section 7</h1>
+            <p>Content for Section 7...</p>
+            <div class="quiz-container">
+                <!-- Intro Slide -->
+                <div class="slide intro" id="intro">
+                    <h2>What's <u>your</u> dirty secret?</h2>
+                    <p>Test your orientation. Which side are you?</p>
+                    <button class="btn btn-primary" onclick="startQuiz()">Start</button>
+                </div>
+            
+                <!-- Question Slides -->
+                <div class="slide question" id="question1">
+                    <h3>Do you prefer sunsets or sunrises?</h3>
+                    <div class="btn-options">
+                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Sunsets</button>
+                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Sunrises</button>
+                    </div>
+                </div>
+            
+                <div class="slide question" id="question2">
+                    <h3>Mountains or Beaches?</h3>
+                    <div class="btn-options">
+                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Mountains</button>
+                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Beaches</button>
+                    </div>
+                </div>
+            
+                <div class="slide question" id="question3">
+                    <h3>Cold weather or Warm weather?</h3>
+                    <div class="btn-options">
+                        <button class="btn btn-primary btn-ans-1" onclick="answer(-1)">Cold</button>
+                        <button class="btn btn-primary btn-ans-2" onclick="answer(1)">Warm</button>
+                    </div>
+                </div>
+            
+                <!-- Result Slide -->
+                <div class="slide result" id="result">
+                    <h2 id="result-title">Your Result</h2>
+                    <p id="result-text">Your Result</p>
+                    <button class="btn btn-center" onclick="restartQuiz()">Start Again</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="custom-scrollbar">
+        <div class="section-labels">
+            <a href="#section1" class="section-label" data-section="section1">Intro</a>
+            <a href="#section2" class="section-label" data-section="section2">Preliminary analysis</a>
+            <a href="#section3" class="section-label" data-section="section3">International influences</a>
+            <a href="#section4" class="section-label" data-section="section4">Genres and themes</a>
+            <a href="#section5" class="section-label" data-section="section5">Characters</a>
+            <a href="#section6" class="section-label" data-section="section6">Conclusion</a>
+        </div>
+        <div class="scroll-track">
+            <div class="scroll-progress"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid w-100 footer">
+        <div class="row justify-content-center my-5 mx-0">
+            <div class="content col-10 col-lg-8 col-xl-6">
+                <p id="source1"><sup>[10]</sup><a href="">Smith, J. Cold War Cinema: Politics on Screen. 2020. Smith, J. Cold War Cinema: Politics on Screen. 2020. Smith, J. Cold War Cinema: Politics on Screen. 2020. Smith, J. Cold War Cinema: Politics on Screen. 2020.</a></p>
+                <p id="source2">Doe, M. Film and Political Tensions. 2018.</p>
+                <p><a href="https://www.flaticon.com/free-animated-icons/film-roll">Film roll animated icons created by Freepik - Flaticon</a></p>
+            </div>
+        </div>
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts/quiz.js"></script>
+    <script type="text/javascript" src="scripts/scroll.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="text/javascript" src="scripts/maps.js"></script>
+    </body>
 </html>

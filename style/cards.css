@@ -1,0 +1,49 @@
+/* Center the toggle container */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+  
+  /* Customize the toggle switch */
+  .form-check-input {
+    height: 20px;
+    cursor: pointer;
+    background-color: var(--scale-2);
+    border-color: var(--scale-2);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Change the color when the toggle is checked */
+  .form-check-input:checked {
+    background-color: var(--scale-6);
+    border-color: var(--scale-6);
+  }
+  
+  /* Ensure the switch thumb is visible */
+  .form-check-input:checked::before {
+    background-color: #fff;
+  }
+  
+#cardGroup1 .card-footer {
+    background-color: var(--scale-2);
+    color: white;
+}
+
+#cardGroup1 .card {
+    border-color: var(--scale-1);
+    background-color: var(--scale-3);
+}
+
+#cardGroup2 .card-footer {
+    background-color: var(--scale-6);
+    color: white;
+}
+
+#cardGroup2 .card {
+    border-color: var(--scale-7);
+    background-color: var(--scale-5);
+}

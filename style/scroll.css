@@ -1,0 +1,75 @@
+.custom-scrollbar {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: auto; /* Increased width to accommodate labels */
+    height: 230px; /* Same height as requested */
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in transition */
+  }
+
+.custom-scrollbar.visible {
+    opacity: 1; /* Fully visible state */
+}
+  
+  .scroll-track {
+    position: relative;
+    width: 8px;
+    height: 100%;
+    background: #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: auto; /* Align track to the right */
+  }
+  
+  .scroll-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(
+      to bottom,
+      var(--scale-1),
+      var(--scale-2),
+      var(--scale-3),
+      var(--scale-4),
+      var(--scale-5),
+      var(--scale-6),
+      var(--scale-7)
+    );
+    transition: height 0.2s;
+  }
+  
+  .section-labels {
+    position: absolute;
+    left: -120px; /* Ensure labels are fully visible to the left */
+    width: 100px; /* Adjusted width for labels */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .section-label {
+    font-size: 0.9rem;
+    color: var(--neutral-1);
+    text-align: right;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline for links */
+    padding: 5px;
+    border-radius: 5px;
+    transition: font-weight 0.2s, background-color 0.2s;
+    line-height: 120%;
+  }
+  
+  .section-label:hover {
+    background-color: var(--neutral-4);
+  }
+  
+  .section-label.active {
+    font-weight: bold;
+  }
+  
